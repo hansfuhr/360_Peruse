@@ -22,6 +22,22 @@ div{
     margin-left: 4em;
     margin-right: 4em;
 }
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    
+}
+.left{
+    left: 0;
+
+}
+.right{
+    right: 0;
+}
 h1{
     font-size: 1.5em;
 }
@@ -58,29 +74,8 @@ a:visited{
     text-decoration: underline;
 
 }
-#largeimg{
-    display: block;
-    border: solid 1pt black;
-    padding: 0.25em;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.5em;
-    
-}
-section{
-    background-color: white;
-    margin-left: 4em;
-    margin-right: 4em;
-}
-#social{
-    
-    border-radius: 5px;
-    background-image: url("images/gray-gradient.png");
-    height: 50px;
-    padding-left: 1em;
-    
-}
+
+
 .byline{
 
     color: #0a0a0a;
@@ -113,11 +108,4 @@ li{
 h3{
     font-weight: bold;
 }
-#reviews{
-    border-bottom: 0;
-    margin-bottom: 0;
 
-}
-#reviewsec{
-    padding-bottom: 2em;
-}
