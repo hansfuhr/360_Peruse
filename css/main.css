@@ -1,0 +1,123 @@
+header{
+    color: rgb(44, 41, 41);
+    background-color: #fdfcfd;
+    margin: 0em 0em 0.5em 0em;
+    padding-left: 0.5em;
+}
+footer{
+    color: white;
+    background-color: #312c32;
+    margin: 0.5em 4em 0em 4em;
+}
+h1, h2, h3, nav, footer{
+    font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+
+}
+section, footer{
+    padding: 0.5em;
+}
+div{
+    margin-bottom: 0.5em;
+    background-color: white;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+h1{
+    font-size: 1.5em;
+}
+h2{
+    font-size: 0.75em;
+}
+h3,nav{
+    font-size: 1.125em;
+}
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%;
+    background-color: #d6d8da;
+}
+a:link{
+    text-decoration: none;
+    color: #0c0c0c;
+    
+}
+a:visited{
+    text-decoration: none;
+    color: rgb(75, 74, 74)
+}
+.post{
+    border: solid 1pt #0c0c0c00;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.post:hover{
+    text-decoration: none;
+    border: solid 1pt black;
+}
+.Author:hover{
+    text-decoration: underline;
+
+}
+#largeimg{
+    display: block;
+    border: solid 1pt black;
+    padding: 0.25em;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    
+}
+section{
+    background-color: white;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+#social{
+    
+    border-radius: 5px;
+    background-image: url("images/gray-gradient.png");
+    height: 50px;
+    padding-left: 1em;
+    
+}
+.byline{
+
+    color: #0a0a0a;
+    font-style: italic;
+    font-weight: bold;
+}
+.comment{
+    padding-top: 0.5em;
+    
+    border-top: 1px solid;
+    border-bottom: 1px dotted;
+}
+.span{
+    display: inline-block;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 70%;
+    
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1em;
+}
+li{
+    display: inline;
+    padding: 1em;
+}
+h3{
+    font-weight: bold;
+}
+#reviews{
+    border-bottom: 0;
+    margin-bottom: 0;
+
+}
+#reviewsec{
+    padding-bottom: 2em;
+}
