@@ -1,8 +1,16 @@
 header{
+    position: fixed;
     color: rgb(44, 41, 41);
-    background-color: #fdfcfd;
+    background-color: #fafafa;
     margin: 0em 0em 0.5em 0em;
+    padding-top: 1em;
     padding-left: 0.5em;
+    position: sticky;
+    top: 0;
+    
+    z-index: 1;
+    border-bottom: 0.5pt solid grey;
+     
 }
 footer{
     color: white;
@@ -15,28 +23,21 @@ h1, h2, h3, nav, footer{
 }
 section, footer{
     padding: 0.5em;
-}
-div{
-    margin-bottom: 0.5em;
-    background-color: white;
-    margin-left: 4em;
-    margin-right: 4em;
-}
-.split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    
-}
-.left{
-    left: 0;
 
 }
-.right{
-    right: 0;
+
+.main {
+    flex: 65%;
+    
+    
+}
+.secondary {
+    flex: 35%;
+    
+    
+}
+.row {
+    display: flex;
 }
 h1{
     font-size: 1.5em;
@@ -63,8 +64,10 @@ a:visited{
 }
 .post{
     border: solid 1pt #0c0c0c00;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: white;
+    margin-left: 4em;
+    margin-right: 4em;
 }
 .post:hover{
     text-decoration: none;
@@ -75,19 +78,6 @@ a:visited{
 
 }
 
-
-.byline{
-
-    color: #0a0a0a;
-    font-style: italic;
-    font-weight: bold;
-}
-.comment{
-    padding-top: 0.5em;
-    
-    border-top: 1px solid;
-    border-bottom: 1px dotted;
-}
 .span{
     display: inline-block;
     padding-top: 1em;
