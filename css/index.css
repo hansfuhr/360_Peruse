@@ -97,13 +97,18 @@ a:visited{
 	
 }
 ul{
-	list-style-type: none;
+	display: block;
+	list-style-type: circle;
+
+	padding-left: 40px;
+	/*list-style-type: none;*/
 	margin: 0;
 	padding: 0;
 	padding-bottom: 1em;
 }
+
 li{
-	display: inline;
+	display: ;
 	padding: 1em;
 }
 h3{
