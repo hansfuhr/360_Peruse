@@ -1,103 +1,107 @@
 header{
-    position: fixed;
-    color: rgb(44, 41, 41);
-    background-color: #fafafa;
-    margin: 0em 0em 0.5em 0em;
-    padding-top: 1em;
-    padding-left: 0.5em;
-    position: sticky;
-    top: 0;
-    
-    z-index: 1;
-    border-bottom: 0.5pt solid grey;
-     
+	position: fixed;
+	color: rgb(44, 41, 41);
+	background-color: #fafafa;
+	margin: 0em 0em 0.5em 0em;
+	padding-top: 1em;
+	padding-left: 0.5em;
+	position: sticky;
+	top: 0;
+	
+	z-index: 1;
+	border-bottom: 0.5pt solid grey;
+	 
 }
-footer{
-    border: solid 1pt #0c0c0c00;
-    margin-bottom: 0.5em;
-    background-color: white;
-    margin-left: 4em;
-    margin-right: 4em;
+.footer{
+	border: solid 1pt #0c0c0c00;
+	margin-bottom: 0.5em;
+	background-color: white;
+	margin-left: 4em;
+	margin-right: 4em;
+}
+.sticky{
+	position: fixed;
+	top: 0;
 }
 h1, h2, h3, nav, footer{
-    font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
 
 }
 section, footer{
-    padding: 0.5em;
+	padding: 0.5em;
 
 }
 
 .main {
-    flex: 65%;
-    
-    
+	flex: 65%;
+	
+	
 }
 .secondary {
-    flex: 35%;
-    
-    
+	flex: 35%;
+	
+	
 }
 .row {
-    display: flex;
+	display: flex;
 }
 h1{
-    font-size: 1.5em;
+	font-size: 1.5em;
 }
 h2{
-    font-size: 0.75em;
+	font-size: 0.75em;
 }
 h3,nav{
-    font-size: 1.125em;
+	font-size: 1.125em;
 }
 body{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 100%;
-    background-color: #d6d8da;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 100%;
+	background-color: #d6d8da;
 }
 a:link{
-    text-decoration: none;
-    color: #0c0c0c;
-    
+	text-decoration: none;
+	color: #0c0c0c;
+	
 }
 a:visited{
-    text-decoration: none;
-    color: rgb(75, 74, 74)
+	text-decoration: none;
+	color: rgb(75, 74, 74)
 }
 .post{
-    border: solid 1pt #0c0c0c00;
-    margin-bottom: 0.5em;
-    background-color: white;
-    margin-left: 4em;
-    margin-right: 4em;
+	border: solid 1pt #0c0c0c00;
+	margin-bottom: 0.5em;
+	background-color: white;
+	margin-left: 4em;
+	margin-right: 4em;
 }
 .post:hover{
-    text-decoration: none;
-    border: solid 1pt black;
+	text-decoration: none;
+	border: solid 1pt black;
 }
 .Author:hover{
-    text-decoration: underline;
+	text-decoration: underline;
 
 }
 
 .span{
-    display: inline-block;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    font-size: 70%;
-    
+	display: inline-block;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: 70%;
+	
 }
 ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 1em;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 1em;
 }
 li{
-    display: inline;
-    padding: 1em;
+	display: inline;
+	padding: 1em;
 }
 h3{
-    font-weight: bold;
+	font-weight: bold;
 }
 
