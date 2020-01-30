@@ -13,9 +13,11 @@ header{
      
 }
 footer{
-    color: white;
-    background-color: #312c32;
-    margin: 0.5em 4em 0em 4em;
+    border: solid 1pt #0c0c0c00;
+    margin-bottom: 0.5em;
+    background-color: white;
+    margin-left: 4em;
+    margin-right: 4em;
 }
 h1, h2, h3, nav, footer{
     font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
