@@ -66,7 +66,7 @@ a:link{
 }
 a:visited{
 	text-decoration: none;
-	color: rgb(75, 74, 74)
+	color: gray;
 }
 .post{
 	border: solid 1pt #0c0c0c00;
@@ -79,6 +79,7 @@ a:visited{
 	text-decoration: none;
 	border: solid 1pt black;
 }
+
 .Author:hover{
 	text-decoration: underline;
 
@@ -104,4 +105,9 @@ li{
 h3{
 	font-weight: bold;
 }
-
+.comment{
+	padding-left: 1em;
+	border-left: solid 1pt black;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
