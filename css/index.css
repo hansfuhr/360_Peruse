@@ -79,6 +79,7 @@ a:visited{
 	margin-left: 4em;
 	margin-right: 4em;
 }
+
 .post:hover{
 	text-decoration: none;
 	border: solid 1pt black;
