@@ -109,7 +109,7 @@ ul{
 }
 
 li{
-	display: ;
+	
 	padding: 1em;
 }
 h3{
@@ -121,3 +121,11 @@ h3{
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 }
+
+
+
+input:required {
+	border: 1.5px solid black;
+  }
+
+ 
