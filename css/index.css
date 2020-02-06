@@ -78,6 +78,16 @@ a:visited{
 	background-color: white;
 	margin-left: 4em;
 	margin-right: 4em;
+	padding: 0.5em;
+}
+.staticpost{
+	text-decoration: none;
+	border: solid 1pt black;
+	margin-bottom: 0.5em;
+	background-color: white;
+	margin-left: 4em;
+	margin-right: 4em;
+	padding: 0.5em;
 }
 
 .post:hover{
@@ -97,21 +107,8 @@ a:visited{
 	font-size: 70%;
 	
 }
-ul{
-	display: block;
-	list-style-type: circle;
 
-	padding-left: 40px;
-	/*list-style-type: none;*/
-	margin: 0;
-	padding: 0;
-	padding-bottom: 1em;
-}
 
-li{
-	
-	padding: 1em;
-}
 h3{
 	font-weight: bold;
 }
@@ -128,4 +125,19 @@ input:required {
 	border: 1.5px solid black;
   }
 
- 
+ .list{
+	 padding: 0.5em;
+ }
+ ul{
+	 list-style: none;
+ }
+ li{
+	 border-top: solid 0.5pt black;
+	 padding-top: 1em;
+	 padding-bottom: 1em;
+	 padding-left: 2em;
+ }
+ #popular{
+	 padding: 0.5em;
+	 color: black;
+ }
