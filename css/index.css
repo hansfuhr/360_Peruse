@@ -7,9 +7,11 @@ header{
 	z-index: 1;
 	border-bottom: 0.5pt solid grey;
 }
+
 #logo:hover{
 	border: 1pt solid black;
 }
+
 .footer{
 	border: solid 1pt #0c0c0c00;
 	margin-bottom: 0.5em;
@@ -17,14 +19,17 @@ header{
 	margin-left: 4em;
 	margin-right: 4em;
 }
+
 .sticky{
 	position: fixed;
 	top: 0;
 }
+
 h1, h2, h3, nav, footer{
 	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
 
 }
+
 section, footer{
 	padding: 0.5em;
 
@@ -35,14 +40,17 @@ section, footer{
 	
 	
 }
+
 .secondary {
 	flex: 35%;
 	
 	
 }
+
 .row {
 	display: flex;
 }
+
 h1{
 	font-size: 1.5em;
 }
@@ -112,34 +120,36 @@ h3{
 	padding-bottom: 0.5em;
 }
 
-
-
 input:required {
 	border: 1.5px solid black;
-  }
+}
 
- .list{
-	 padding: 0.5em;
- }
- ul{
-	 list-style: none;
- }
- li{
-	 border-top: solid 0.5pt black;
-	 padding-top: 1em;
-	 padding-bottom: 1em;
-	 padding-left: 2em;
- }
- #popular{
-	 padding: 0.5em;
-	 color: black;
- }
+.list{
+	padding: 0.5em;
+}
+
+ul{
+	list-style: none;
+}
+
+li{
+	border-top: solid 0.5pt black;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 2em;
+}
+
+#popular{
+	padding: 0.5em;
+	color: black;
+}
 
 .topnav{
 	overflow: hidden;
 	margin-left: 1em;
 	margin-right: 5em;
 }
+
 .topnav input[type=button]{
 	float: right;
 	display: block;
@@ -156,20 +166,24 @@ input:required {
 	color: rgb(0, 3, 2);
 
 }
+
 .topnav input[type=text]{
 	margin-left: 2em;
 	padding: 0.5em;
 	padding-right: 15em;
 
 }
+
 .topnav input:hover{
 	border: 1pt solid black;
 }
+
 .staticpost input{
 	margin-left: 0.5em;
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
+
 .topnav select{
 	margin-left: 0.25em;
 	padding: 0.5em;
