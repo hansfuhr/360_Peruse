@@ -2,7 +2,6 @@ header{
 	position: fixed;
 	color: rgb(44, 41, 41);
 	background-color: #fafafa;
-	position: sticky;
 	top: 0;
 	z-index: 1;
 	border-bottom: 0.5pt solid grey;
@@ -13,11 +12,13 @@ header{
 }
 
 .footer{
-	border: solid 1pt #0c0c0c00;
-	margin-bottom: 0.5em;
+	position: sticky;
+	border: solid 1pt #0c0c0c;
 	background-color: white;
 	margin-left: 4em;
 	margin-right: 4em;
+	padding: 0.5em;
+	user-select: none;
 }
 
 .sticky{
@@ -27,24 +28,18 @@ header{
 
 h1, h2, h3, nav, footer{
 	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
-
 }
 
 section, footer{
 	padding: 0.5em;
-
 }
 
 .main {
 	flex: 65%;
-	
-	
 }
 
 .secondary {
 	flex: 35%;
-	
-	
 }
 
 .row {
@@ -54,33 +49,40 @@ section, footer{
 h1{
 	font-size: 1.5em;
 }
+
 h2{
 	font-size: 0.75em;
 }
-h3,nav{
+
+h3, nav{
 	font-size: 1.125em;
 }
+
 body{
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: 100%;
 	background-color: #d6d8da;
+	padding-top: 4em;
 }
+
 a:link{
 	text-decoration: none;
 	color: #0c0c0c;
-	
 }
+
 a{
 	color: black;
 }
+
 .post{
 	border: solid 1pt #0c0c0c00;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 	background-color: white;
 	margin-left: 4em;
 	margin-right: 4em;
 	padding: 0.5em;
 }
+
 .staticpost{
 	text-decoration: none;
 	border: solid 1pt black;
@@ -89,6 +91,7 @@ a{
 	margin-left: 4em;
 	margin-right: 4em;
 	padding: 0.5em;
+	user-select: none;
 }
 
 .post:hover{
@@ -106,13 +109,12 @@ a{
 	padding-top: 1em;
 	padding-bottom: 1em;
 	font-size: 70%;
-	
 }
-
 
 h3{
 	font-weight: bold;
 }
+
 .comment{
 	padding-left: 1em;
 	border-left: solid 1pt black;
@@ -171,7 +173,6 @@ li{
 	margin-left: 2em;
 	padding: 0.5em;
 	padding-right: 15em;
-
 }
 
 .topnav input:hover{
