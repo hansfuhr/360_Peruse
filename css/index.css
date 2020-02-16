@@ -7,7 +7,9 @@ header{
 	z-index: 1;
 	border-bottom: 0.5pt solid grey;
 }
-
+#logo:hover{
+	border: 1pt solid black;
+}
 .footer{
 	border: solid 1pt #0c0c0c00;
 	margin-bottom: 0.5em;
@@ -159,6 +161,9 @@ input:required {
 	padding: 0.5em;
 	padding-right: 15em;
 
+}
+.topnav input:hover{
+	border: 1pt solid black;
 }
 .staticpost input{
 	margin-left: 0.5em;
