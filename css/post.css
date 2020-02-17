@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* --------------- */
+
+.comment{
+	padding-left: 1em;
+	border-left: solid 1pt black;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+input:required {
+	border: 1.5px solid black;
+}
+
+#popular{
+	padding: 0.5em;
+	color: black;
+}
