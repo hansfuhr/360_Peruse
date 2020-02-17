@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1{
+	font-size: 1.5em;
+}
+
+h2{
+	font-size: 0.75em;
+}
+
+h3{
+	font-size: 1.125em;
+}
+
+body{
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+	background-color: #d6d8da;
+	display: flex;
+}
+
+/* header styles */
+header {
+	position: fixed;
+	width: 100%;
+	background-color: #FAFAFA;
+	top: 0;
+	border-bottom: 0.5pt solid grey;
+	height: 3em;
+	padding: 0.25em;
+}
+
+#logo {
+	float: left;
+	width: 100px;
+	margin-top: 0.5em;
+	margin-left: 1em;
+}
+
+#signup-btn, #login-btn {
+	float: right;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	padding: 0.5em 1em;
+	margin-right: 2em;
+	margin-top: 0.5em;
+	font-weight: 900;
+	background-color: rgb(11, 226, 97);
+}
+
+#feed-select {
+	width: 10vw;
+	margin-top: 1.5vh;
+	margin-left: 2em;
+	padding: 0.5em;
+}
+
+#search-bar {
+	margin-left: 2em;
+	padding: 0.5em;
+	width: 30vw;
+}
+/* end of header styles */
+
+main {
+	margin-top: 3em;
+	flex: 65%;
+	margin-bottom: 1em;
+}
+
+.post {
+	border: solid 1pt #0c0c0c00;
+	margin-top: 1em;
+	background-color: white;
+	margin-left: 4em;
+	margin-right: 4em;
+	padding: 0.5em;
+}
+
+.post:hover{
+	text-decoration: none;
+	border: solid 1pt black;
+}
+
+#secondary {
+	margin-top: 7vh;
+	flex: 35%;
+	overflow: hidden;
+}
+
+#recommended-block {
+	text-decoration: none;
+	border: solid 1pt black;
+	background-color: white;
+	margin: 1em 4em;
+	padding: 0.75em;
+	user-select: none;
+}
+
+hr {
+	border: solid;
+}
+
+.text-link:hover{
+	text-decoration: underline;
+}
+
+ul{
+	list-style: none;
+}
+
+li{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 2em;
+}
+
+footer {
+	border: solid 1pt #0c0c0c;
+	background-color: white;
+	margin-left: 4em;
+	margin-right: 4em;
+	padding: 0.5em;
+}
+
+a {
+	color: black;
+}
+
+a:link{
+	text-decoration: none;
+	color: #0c0c0c;
+}
