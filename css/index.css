@@ -73,11 +73,17 @@ main {
 	margin-left: 4em;
 	margin-right: 4em;
 	padding: 0.5em;
+	overflow: hidden;
 }
 
 .post:hover{
 	text-decoration: none;
 	border: solid 1pt black;
+}
+
+.post figure img {
+	max-width: 90%;
+	border-radius: 0.5em;
 }
 
 #secondary {
