@@ -24,6 +24,7 @@ header {
 	border-bottom: 0.5pt solid grey;
 	height: 3em;
 	padding: 0.25em;
+	z-index: 1;
 }
 
 #logo {
