@@ -12,7 +12,7 @@ email.addEventListener("input", function (event) {
 
 function checkpass(){
 	if (document.getElementById('pass').value ==
-	document.getElementById('confirm').value) {
+	document.getElementById('confirm').value && document.getElementById('pass').value!=""&&document.getElementById('confirm').value!="") {
 	document.getElementById('pass').style.backgroundColor = '#84FF9D';
 	document.getElementById('confirm').style.backgroundColor = '#84FF9D';
 } 	else {
