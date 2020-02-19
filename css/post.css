@@ -44,6 +44,17 @@ header {
 	margin-top: 0.5em;
 	font-weight: 900;
 	background-color: rgb(11, 226, 97);
+	color: black;
+	border-radius: 5px;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+#signup-btn:hover, #login-btn:hover{
+	background: #434343;
+	color: white;
+	letter-spacing: 1px;
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
 }
 
 #feed-select {
