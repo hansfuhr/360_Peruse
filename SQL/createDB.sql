@@ -3,8 +3,9 @@ CREATE DATABASE Peruse_db;
 CREATE TABLE post
 {
     postType    BIT NOT NULL, -- 0=text | 1=image
+    title       VARCHAR NOT NULL,
     contents    VARCHAR NOT NULL, -- either text or or address of image
-    authorId    VARCHAR NOT NULL,
+    author      VARCHAR NOT NULL,
     community   VARCHAR, -- if null then post is only visible on author's profile
     timePosted  TIMESTAMP NOT NULL,
     upvotes     INT NOT NULL,
@@ -36,5 +37,5 @@ CREATE TABLE community
 CREATE TABLE following
 {
     account VARCHAR NOT NULL,
-    following   VARCHAR NOT NULL -- either a community name or account username
+    following   VARCHAR NOT NULL -- either a community name or account username (c/name a/name notation)
 };
