@@ -1,9 +1,9 @@
 <?php
-	$address = "localhost";
+	$host = "localhost";
 	$username = "home";
 	$password = "password";
 	$database = "peruse_db";
-	$mysqli = new mysqli($address, $username, $password, $database);
+	$mysqli = new mysqli($host);
 
 	//generate feed
 	$offset = 0;

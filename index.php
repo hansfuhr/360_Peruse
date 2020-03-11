@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-<title>Peruse</title>
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/index.css">
-<link type="text/javascript"   href="js/footerscroll.js">
+	<title>Peruse</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+	<!-- <link type="text/javascript" href="js/footerscroll.js"> -->
+	<script src="js/footerscroll.js"></script>
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<!-- <script src="~https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+	<!-- jQuery local fallback -->
+	<script>window.jQuery || document.write('<script src="js/jquery-3.1.1.min.js"><\/script>')</script>
 </head>
 
 <body>
@@ -20,20 +27,19 @@
 		<a href="login.html"><input id="login-btn" type="button" value="LOG IN"></a>
 	</header>
 	<main>
-		<?php
-			$address = "localhost";
-			$username = "home";
-			$password = "password";
-			$database = "peruse_db";
-			$mysqli = new mysqli($address, $username, $password, $database);
+		<script>
+			// load feed here
 
-			//generate feed
-			$offset = 0;
-
-			$offset += 10;
-			$sql = "SELECT *, () AS OrderCondition FROM post WHERE /*stuff here*/ ORDER BY /*stuff here*/ DESC LIMIT 10 OFFSET $offset";
-
-		?>
+			if(window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					$("main")
+					//=  this.responseText;
+				}
+			}
+		</script>
 	</main>
 	<section id="secondary">
 		<div id="recommended-block">
