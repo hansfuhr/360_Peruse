@@ -4,7 +4,7 @@ CREATE TABLE post
 {
     postType    BIT NOT NULL, -- 0=text | 1=image
     title       VARCHAR NOT NULL,
-    contents    VARCHAR NOT NULL, -- either text or or address of image
+    content    VARCHAR NOT NULL, -- either text or or address of image
     author      VARCHAR NOT NULL,
     community   VARCHAR, -- if null then post is only visible on author's profile
     timePosted  TIMESTAMP NOT NULL,

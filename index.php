@@ -30,15 +30,27 @@
 		<script>
 			// load feed here
 
-			if(window.XMLHttpRequest) {
-				xmlhttp = new XMLHttpRequest();
-			}
-			xmlhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					$("main")
-					//=  this.responseText;
+			function loadMore() {
+				if(window.XMLHttpRequest) {
+					xmlhttp = new XMLHttpRequest();
 				}
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						$("main").append(this.responseText);
+					}
+				};
+				var offset = 10;
+				xmlhttp.open("GET", "loadFeed.php?offset=" + offset, true);
+				xmlhttp.send();
 			}
+
+			loadMore();
+
+			window.onscroll = function (event) {
+				if ($(window).scrollTop() + $(window).height() >= $(document).height()-100) {
+					loadMore();
+				}
+			};
 		</script>
 	</main>
 	<section id="secondary">
