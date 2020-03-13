@@ -15,43 +15,12 @@
 </head>
 
 <body>
-	<header>
-		<a href="index.html"><img id="logo" src="images/logo_trans.png" alt="Peruse logo"></a>
-		<select id="feed-select">
-			<option>All</option>
-			<option>Popular</option>
-			<option>Top Communities</option>
-		</select>
-		<input type="text" id="search-bar" placeholder="Search Peruse">
-		<a href="signup.html"><input id="signup-btn" type="button" value="SIGN UP"></a>
-		<a href="login.html"><input id="login-btn" type="button" value="LOG IN"></a>
-	</header>
+	<?php
+		include "header.php";
+	?>
 	<main>
-		<script>
-			// load feed here
-
-			function loadMore() {
-				if(window.XMLHttpRequest) {
-					xmlhttp = new XMLHttpRequest();
-				}
-				xmlhttp.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) {
-						$("main").append(this.responseText);
-					}
-				};
-				var offset = 10;
-				xmlhttp.open("GET", "loadFeed.php?offset=" + offset, true);
-				xmlhttp.send();
-			}
-
-			loadMore();
-
-			window.onscroll = function (event) {
-				if ($(window).scrollTop() + $(window).height() >= $(document).height()-100) {
-					loadMore();
-				}
-			};
-		</script>
+		<!-- feed loads here -->
+		<script src="js/index.js"></script>
 	</main>
 	<section id="secondary">
 		<div id="recommended-block">
