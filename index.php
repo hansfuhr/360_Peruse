@@ -20,7 +20,7 @@
 	?>
 	<main>
 		<!-- feed loads here -->
-		<script src="js/index.js"></script>
+		<script src="js/feed.js"></script>
 	</main>
 	<section id="secondary">
 		<div id="recommended-block">

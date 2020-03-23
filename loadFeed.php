@@ -7,13 +7,24 @@
 
 	//generate feed
 	$offset = $_GET['offset'];
-	$orderCondition = $_GET['order'];
-	$feed = $_GET['user'];
+	$orderCondition = $_GET['order']; // hot/new/etc.
+	$feed = //which posts to show based off of current community or currently logged in user
+
 //	// OrderCondition changes depending on hot / new / top etc.
 //	// WHERE clause changes depending on user / all / community etc. feed requested
 //	// $offset should be incremented by LIMIT amount so as to continuously load for data when the end of the feed is reached
 	$sql = "SELECT *, (/*equation here*/) AS OrderCondition FROM post WHERE /*stuff here*/ ORDER BY OrderCondition DESC LIMIT 10 OFFSET $offset";
-	mysqli_query($sql);
+	$result = mysqli_query($sql);
+//	$result = $mysqli -> query($sql)
+
+
+	$postType = "image";
+	$title = "An interesting title";
+	$content = "/Peruse/images/sample.png";
+	$account = "johndoe"
+
+
+
 
 
 	echo "<a href=\"post.php?author" + $author + "&timePosted=" + $timePosted + "\">";
