@@ -2,12 +2,12 @@ CREATE DATABASE Peruse_db;
 
 CREATE TABLE post
 {
+    author      VARCHAR NOT NULL,
+    timePosted  TIMESTAMP NOT NULL,
     postType    BIT NOT NULL, -- 0=text | 1=image
+    community   VARCHAR, -- if null then post is only visible on author's profile
     title       VARCHAR NOT NULL,
     content    VARCHAR NOT NULL, -- either text or or address of image
-    author      VARCHAR NOT NULL,
-    community   VARCHAR, -- if null then post is only visible on author's profile
-    timePosted  TIMESTAMP NOT NULL,
     upvotes     INT NOT NULL,
     downvotes   INT NOT NULL,
     PRIMARY KEY (authorId, timePosted),

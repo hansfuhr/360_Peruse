@@ -1,0 +1,2 @@
+# INSERT INTO post (author, timePosted, postType, community, title, content, upvotes, downvotes) VALUES (adjohnston99, "2020-03-26 01:59:37", "img", "photography", "An Interesting Title", "/images/sample.jpg", 0, 0);
+INSERT INTO `post` (`author`, `timePosted`, `postType`, `community`, `title`, `content`, `upvotes`, `downvotes`) VALUES ('adjohnston99', '2020-03-26 02:11:15', 'img', 'photography', 'Kelowna From East Ridge', '/images/sample.jpg', '0', '0');
