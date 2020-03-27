@@ -27,30 +27,30 @@
 		$content = $row[5];
 		$upvotes = $row[6];
 		$downvotes = $row[7];
+for ($i=0;$i<10;$i++) {
+		echo "	<div id='$author/$timePosted' class='post'>";
+		echo "		<div class='post-contents'>";
+		echo "			<h3>$title</h3>";
 
-		for ($i = 0; $i < 10; $i++) {
-			echo "	<div class='post'>";
-			echo "		<div class='post-contents'>";
-			echo "			<h3>$title</h3>";
+		switch ($postType) {
+			case "txt":
+				echo "			<p>$content</p>";
+				break;
+			case "img":
+				echo "			<img src='$content' alt='Sample post image'>";
+				break;
+			default:
 
-			switch ($postType) {
-				case "txt":
-					echo "			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque eget nisi vitae viverra. Cras molestie sed diam non mattis. Curabitur malesuada metus a nibh sagittis, ac volutpat eros tempus. Duis rutrum, quam id pretium euismod, libero elit convallis sapien, iaculis venenatis nulla est nec nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras volutpat vulputate turpis quis aliquam. Vivamus tortor odio, vestibulum eu lorem id, imperdiet pulvinar leo.</p>";
-					break;
-				case "img":
-					echo "			<img src='$content' alt='Sample post image'>";
-					break;
-				default:
-
-			}
-
-			//this next line should be dependant on the height of the post
-//		echo "			<div class=\"gradient\"></div>";
-			echo "		</div>";
-			echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a><p>Posted by <a class='text-link' href='/a/$author'>$author</a> in <a class='text-link' href='/c/$community'>$community</a></p>";
-			echo "	</div>";
-			echo "</a>";
 		}
+
+		//this next line should be dependant on the height of the post
+//		echo "			<div class=\"gradient\"></div>";
+
+		echo "		</div>";
+		echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a><p>Posted by <a class='text-link' href='/a/$author'>$author</a> in <a class='text-link' href='/c/$community'>$community</a></p>";
+		echo "	</div>";
+		echo "</a>";
+	}
 	}
 
 

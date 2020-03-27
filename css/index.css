@@ -83,12 +83,24 @@ header {
 }
 /* end of header styles */
 
+#row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	margin-left: 5vw;
+}
+
 main {
-	float: left;
+	flex: 1;
+	flex-basis: auto; /* like width */
+	flex-grow: 2; /* proportion of container */
+	flex-shrink: 1;
 	width: 50vw;
+	max-width: 50vw;
 	margin-top: 3em;
 	margin-bottom: 1em;
-	margin-left: 10vw;
+	/*margin-left: 10vw;*/
 }
 
 .post {
@@ -146,11 +158,20 @@ main {
 }
 
 #secondary {
-	float: right;
+	flex: 2;
+	flex-basis: auto; /* width */
+	flex-grow: 1; /* proportion of container */
+	flex-shrink: 2;
+	position: sticky;
+	/*top: -50%; !*relative to the height of self*!*/
+	/*float: right;*/
 	width: 25vw;
+	max-width: 25vw;
 	margin-top: 3em;
-	margin-right: 10vw;
-	overflow: hidden;
+	margin-left: 5vw;
+	/*margin-right: 10vw;*/
+	/*margin-left: 65vw;*/
+	/*overflow: hidden;*/
 }
 
 #recommended-block {
