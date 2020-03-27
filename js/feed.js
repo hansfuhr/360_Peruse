@@ -12,17 +12,18 @@ window.onscroll = function (event) {
 
 // function to load posts in to feed
 function loadMore() {
-	if(window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest();
-	}
-	xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			$("main").append(this.responseText);
-		}
-	};
+	// if(window.XMLHttpRequest) {
+	// 	xmlhttp = new XMLHttpRequest();
+	// }
+	// xmlhttp.onreadystatechange = function() {
+	// 	if (this.readyState == 4 && this.status == 200) {
+	// 		$("main").append(this.responseText);
+	// 	}
+	// };
+	//
+	// xmlhttp.open("GET", "loadFeed.php?offset=" + offset, true);
+	// xmlhttp.send();
+	$.ajax("loadFeed.php?offset=" + offset);
 
-	xmlhttp.open("GET", "loadFeed.php?offset=" + offset, true);
-	xmlhttp.send();
-
-	offset += 1;
+	offset += 10;
 }

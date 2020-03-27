@@ -27,8 +27,8 @@
 		$content = $row[5];
 		$upvotes = $row[6];
 		$downvotes = $row[7];
-for ($i=0;$i<10;$i++) {
-		echo "	<div id='$author/$timePosted' class='post'>";
+//for ($i=0;$i<10;$i++) {
+		echo "	<div id='$author-$timePosted' class='post'>";
 		echo "		<div class='post-contents'>";
 		echo "			<h3>$title</h3>";
 
@@ -50,7 +50,7 @@ for ($i=0;$i<10;$i++) {
 		echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a><p>Posted by <a class='text-link' href='/a/$author'>$author</a> in <a class='text-link' href='/c/$community'>$community</a></p>";
 		echo "	</div>";
 		echo "</a>";
-	}
+//	}
 	}
 
 
