@@ -1,4 +1,171 @@
-form{
+h1{
+	font-size: 1.5em;
+}
+
+h2{
+	font-size: 0.75em;
+}
+
+h3{
+	font-size: 1.125em;
+}
+
+body{
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+	background-color: #d6d8da;
+	padding-top: 3em;
+	padding-bottom: 1em;
+}
+
+/* header styles */
+header {
+	position: fixed;
+	width: 100%;
+	background-color: #FAFAFA;
+	top: 0;
+	border-bottom: 0.5pt solid grey;
+	height: 3em;
+	padding: 0.25em;
+	z-index: 1;
+}
+
+#logo {
+	position: relative;
+	float: left;
+	width: 100px;
+	margin-left: 1em;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+#signup-btn, #login-btn {
+	position: relative;
+	float: right;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	padding: 0.5em 1em;
+	margin-right: 2em;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-weight: 900;
+	background-color: rgb(11, 226, 97);
+	color: black;
+	border-radius: 5px;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+
+#feed-select {
+	position: relative;
+	float: left;
+	margin-left: 2em;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 10vw;
+	padding: 0.5em;
+}
+
+#search-bar {
+	position: relative;
+	float: left;
+	margin-left: 2em;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 30vw;
+	padding: 0.5em;
+}
+
+#signup-btn:hover, #login-btn:hover{
+	background: #434343;
+	color: white;
+	letter-spacing: 1px;
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+/* end of header styles */
+
+#row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	margin-left: 5vw;
+}
+
+main {
+	flex: 1;
+	flex-basis: auto; /* like width */
+	flex-grow: 2; /* proportion of container */
+	flex-shrink: 1;
+	width: 50vw;
+	max-width: 50vw;
+	/*margin-top: 3em;*/
+	margin-bottom: 1em;
+	/*margin-left: 10vw;*/
+}
+
+#secondary {
+	flex: 2;
+	flex-basis: auto; /* width */
+	flex-grow: 1; /* proportion of container */
+	flex-shrink: 2;
+	position: sticky;
+	/*top: -50%; !*relative to the height of self*!*/
+	/*float: right;*/
+	width: 25vw;
+	max-width: 25vw;
+	/*margin-top: 3em;*/
+	margin-left: 5vw;
+	/*margin-right: 10vw;*/
+	/*margin-left: 65vw;*/
+	/*overflow: hidden;*/
+}
+
+#recommended-block {
+	text-decoration: none;
+	border: solid 1pt black;
+	background-color: white;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 0.75em;
+	user-select: none;
+}
+
+hr {
+	border: solid;
+}
+
+.text-link:hover{
+	text-decoration: underline;
+}
+
+ul{
+	list-style: none;
+}
+
+li{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 2em;
+}
+
+footer {
+	border: solid 1pt #0c0c0c;
+	background-color: white;
+	padding: 0.5em;
+}
+
+a {
+	color: black;
+}
+
+a:link{
+	text-decoration: none;
+	color: #0c0c0c;
+}
+
+form {
 	border: solid 1pt #0c0c0c00;
 	margin-top: 1em;
 	background-color: white;
@@ -7,7 +174,8 @@ form{
 	padding: 0.5em;
 	overflow: hidden;
 }
-form input{
+
+form input {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 }

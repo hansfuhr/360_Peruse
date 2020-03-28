@@ -20,14 +20,16 @@
 
 	while ($row = $result->fetch_row()) {
 		$author = $row[0];
-		$timePosted = $row[1];
+		$timePosted = str_replace(["-", " ", ":"], "", $row[1]);
 		$postType = $row[2];
 		$community = $row[3];
 		$title = $row[4];
 		$content = $row[5];
 		$upvotes = $row[6];
 		$downvotes = $row[7];
-//for ($i=0;$i<10;$i++) {
+
+
+for ($i=0;$i<10;$i++) {
 		echo "	<div id='$author-$timePosted' class='post'>";
 		echo "		<div class='post-contents'>";
 		echo "			<h3>$title</h3>";
@@ -50,33 +52,6 @@
 		echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a><p>Posted by <a class='text-link' href='/a/$author'>$author</a> in <a class='text-link' href='/c/$community'>$community</a></p>";
 		echo "	</div>";
 		echo "</a>";
-//	}
 	}
-
-
-
-
-
-////	echo "<a href=\"post.php?author" + $author + "&timePosted=" + $timePosted + "\">";
-//	echo "	<div class=\"post\">";
-//	echo "		<div class=\"post-contents\">";
-//	echo "			<h3>An Interesting Title - w/ image</h3>";
-//
-//	switch($postType) {
-//		case "text":
-//			echo "			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque eget nisi vitae viverra. Cras molestie sed diam non mattis. Curabitur malesuada metus a nibh sagittis, ac volutpat eros tempus. Duis rutrum, quam id pretium euismod, libero elit convallis sapien, iaculis venenatis nulla est nec nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras volutpat vulputate turpis quis aliquam. Vivamus tortor odio, vestibulum eu lorem id, imperdiet pulvinar leo.</p>";
-//			break;
-//		case "image":
-//			echo "			<img src=\"images/sample.jpg\" alt=\"Sample post image\">";
-//			break;
-//		default:
-//
-//	}
-//
-//	echo "			<div class=\"gradient\"></div>";
-//	echo "		</div>";
-//	echo " href=\\";
-//	echo "	</div>";
-//	echo "</a>";
-
+	}
 ?>
