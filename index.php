@@ -23,6 +23,10 @@
 	?>
 	<div id="row">
 		<main>
+			<div id="create-post">
+				<input id="txt-input" type="text" placeholder="Create Post" />
+				<img id="img-icon" src="/images/img-icon.svg" />
+			</div>
 			<!-- feed loads here -->
 			<script src="/js/feed.js"></script>
 		</main>

@@ -103,8 +103,31 @@ main {
 	/*margin-left: 10vw;*/
 }
 
-.post {
+#create-post {
+	display: flex;
+	flex-direction: row;
 	border: solid 1pt #0c0c0c00;
+	background-color: white;
+	margin-top: 1em;
+	padding: 0.5em;
+	overflow: hidden;
+}
+
+#txt-input {
+	flex: 1;
+	flex-basis: auto;
+	border-radius: 5px;
+}
+
+#img-icon {
+	flex: 2;
+	flex-basis: auto;
+	/*margin: 0.25em;*/
+	padding: 0.25em;
+}
+
+.post {
+	border: solid 1pt black;
 	background-color: white;
 	margin-top: 1em;
 	padding: 0.5em;
