@@ -1,3 +1,15 @@
+<?php
+	session_start();
+	try {
+		$loggedInAs = $_SESSION['loggedInAs'];
+	} catch(Exception $e) {
+		echo "<script>console.log(\"".$e."\");</script>";
+		$_SESSION['loggedInAs'] = null;
+//		echo 'Message: ' .$e->getMessage();
+	}
+	echo "<script>console.log(\"".$loggedInAs."\");</script>";
+	$_SESSION['loggedInAs'] = "adjohnston99";
+?>
 <!DOCTYPE html>
 <html lang = "en">
 <head>

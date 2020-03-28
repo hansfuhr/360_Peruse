@@ -7,7 +7,7 @@
 <title>Peruse</title>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/loginsignup.css">
+<link rel="stylesheet" href="css/profile.css">
 <link type="text/javascript"   href="js/footerscroll.js">
 </head>
 <body>
@@ -17,10 +17,15 @@
 	<main>
 		<form action="http://www.randyconnolly.com/tests/process.php" method="post">
 			<fieldset>
-				<legend>Log in to Peruse</legend>
-					Username: <input type="text" name="client" required><br>
-					Password: <input type="password" name="client" required><br>
-					<input type="submit" value="Submit" class="button"> <input type="reset" value="Reset" class="button">
+				<legend>SampleProfile69</legend>
+				<img src="images/profile.jpg" alt="Sample post image">
+				<p>Username: SampleProfile69</p><br>
+				<p>Password: secret</p><br>
+				<p>Email: sampleprofile@someprovider.com</p><br>
+				<p>Email me about the cool new Peruse features: Yes</p><br>
+				<p>Birthdate: April 11, 1989</p><br>
+				<input type="submit" value="EDIT" class="button" id="edit"> 
+				
 			</fieldset>
 		</form>
 	</main>
