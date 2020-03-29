@@ -18,56 +18,24 @@
 		<h1>Photography</h1>
 	</div>
 	<main>
-		<a href="post.php">
-			<div class="post">
-				<div class="post-contents">
-					<h3>An Interesting Title - w/ image</h3>
-					<img src="/images/sample.jpg" alt="Sample post image">
-					<div class="gradient"></div>
-				</div>
-				
-				<a class="uv" href="#">Upvote</a> / <a class="dv" href="#">Downvote</a><p>Posted by <a class="text-link" href="https://ca.linkedin.com/in/daulton-baird-37004a177">Author</a> in <a class="text-link" href="community.php">Photography</a></p>
-			</div>
-		</a>
-		
-		<a href="post.php">
-			<div class="post">
-				<div class="post-contents">
-					<h3>An Interesting Title - w/ image</h3>
-					<img src="/images/sample.jpg" alt="Sample post image">
-					<div class="gradient"></div>
-				</div>
-				
-				<a class="uv" href="#">Upvote</a> / <a class="dv" href="#">Downvote</a><p>Posted by <a class="text-link" href="https://ca.linkedin.com/in/daulton-baird-37004a177">Author</a> in <a class="text-link" href="community.php">Photography</a></p>
-			</div>
-		</a>
-		
-		<a href="post.php">
-			<div class="post">
-				<div class="post-contents">
-					<h3>An Interesting Title - w/ image</h3>
-					<img src="/images/sample.jpg" alt="Sample post image">
-					<div class="gradient"></div>
-				</div>
-				
-				<a class="uv" href="#">Upvote</a> / <a class="dv" href="#">Downvote</a><p>Posted by <a class="text-link" href="https://ca.linkedin.com/in/daulton-baird-37004a177">Author</a> in <a class="text-link" href="community.php">Photography</a></p>
-			</div>
-		</a>
+		<script src="/js/feed.js"></script>
 	</main>
 	<section id="secondary">
-		<div id="recommended-block">
-			<h3 id="popular">Top Posts</h3>
+		<<div id="recommended-block">
+			<h3 id="popular">Popular Communities</h3>
 			<hr />
-			<ol>
-				<li><a href="commmunity.html" class="text-link">My dog Wilson</a></li>
-				<li><a href="commmunity.html" class="text-link">Savannah Wildlife</a></li>
-				<li><a href="commmunity.html" class="text-link">Mountain Landscape</a></li>
-			</ol>
+			<ul>
+				<li><a href="/c/CoolCSSTricks" class="text-link">c/CoolCSSTricks</a></li>
+				<li><a href="/c/GorillaPics" class="text-link">c/GorillaPics</a></li>
+				<li><a href="/c/GoodJokes" class="text-link">c/GoodJokes</a></li>
+				<li><a href="/c/QuestionsAnswered" class="text-link">c/QuestionsAnswered</a></li>
+			</ul>
 		</div>
 		<footer>
 			<a href ="index.html">Home</a> | <a href ="#top">Back To Top</a>
 			<br />
 			<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
+			<script src="/js/footerscroll.js"></script>
 		</footer>
 	</section>
 </body>

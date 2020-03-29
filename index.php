@@ -1,23 +1,18 @@
+<!DOCTYPE html>
 <?php
 	session_start();
-	try {
-		$loggedInAs = $_SESSION['loggedInAs'];
-	} catch(Exception $e) {
-		echo "<script>console.log(\"".$e."\");</script>";
+	if (!isset($_SESSION['loggedInAs'])) {
 		$_SESSION['loggedInAs'] = null;
-//		echo 'Message: ' .$e->getMessage();
 	}
-	echo "<script>console.log(\"".$loggedInAs."\");</script>";
-	$_SESSION['loggedInAs'] = "adjohnston99";
+	echo "<script>console.log(\"".$_SESSION['loggedInAs']."\");</script>";
 ?>
-<!DOCTYPE html>
 <html lang = "en">
 <head>
 	<title>Peruse</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/index.css">
 	<!-- <link type="text/javascript" href="js/footerscroll.js"> -->
-	<script src="js/footerscroll.js"></script>
+	<script src="/js/footerscroll.js"></script>
 
 	<!-- jQuery CDN -->
 	<script
@@ -28,17 +23,20 @@
 	<!-- jQuery local fallback -->
 	<script>window.jQuery || document.write('<script src="/js/jquery-3.4.1.min.js"><\/script>')</script>
 </head>
-
 <body>
 	<?php
 		include "header.php";
 	?>
 	<div id="row">
 		<main>
-			<div id="create-post">
-				<input id="txt-input" type="text" placeholder="Create Post" />
-				<img id="img-icon" src="/images/img-icon.svg" />
-			</div>
+			<?php
+				if ($_SESSION['loggedInAs'] == null) {
+					echo "<div id='create-post'>";
+					echo "<input id='txt-input' type='text' placeholder='Create Post' />";
+					echo "<img id='img-icon' src='/images/logo_small.png' />";
+					echo "</div >";
+				}
+			?>
 			<!-- feed loads here -->
 			<script src="/js/feed.js"></script>
 		</main>
@@ -79,10 +77,9 @@
 				<a href ="/">Home</a> | <a href ="#main">Back To Top</a>
 				<br />
 				<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
+				<script src="/js/footerscroll.js"></script>
 			</footer>
 		</section>
-		<script src="/js/footerscroll.js"></script>
-<!--		<script>console.log(setStickyTop());</script>-->
 	</div>
 </body>
 </html>

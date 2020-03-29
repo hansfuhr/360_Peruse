@@ -5,7 +5,7 @@ loadMore();
 
 // on scroll check if bottom of page is near then load more if true
 window.onscroll = function (event) {
-	if ($(window).scrollTop() + $(window).height() >= $(document).height()-100) {
+	if ($(window).scrollTop() + $(window).height >= $(document).height()-100) {
 		loadMore();
 	}
 };
@@ -23,7 +23,9 @@ function loadMore() {
 	//
 	// xmlhttp.open("GET", "loadFeed.php?offset=" + offset, true);
 	// xmlhttp.send();
-	$.ajax("loadFeed.php?offset=" + offset);
+	$.ajax("loadFeed.php?offset=" + offset, {success: function (result) {
+		$("main").append(result);
+	}});
 
 	offset += 10;
 }
