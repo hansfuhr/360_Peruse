@@ -21,7 +21,7 @@
 		<script src="/js/feed.js"></script>
 	</main>
 	<section id="secondary">
-		<<div id="recommended-block">
+		<div id="recommended-block">
 			<h3 id="popular">Popular Communities</h3>
 			<hr />
 			<ul>

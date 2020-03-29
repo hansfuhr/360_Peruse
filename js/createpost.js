@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $("#text").onclick = function() {
+window.onload = function() {
+	$("#text").onclick = function() {
 		console.log("click");
 		$("#post-input").html(
 			"<textarea rows=\"4\" cols=\"50\" name=\"posttext\">Enter text here...</textarea><br>"
@@ -11,4 +11,4 @@ $(document).ready(function(){
 			"Select an image: <br><input type=\"file\" name=\"postimg\" accept=\"image/png, image/jpeg\"><br></br>"
 		);
 	});
-});
+};
