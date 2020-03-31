@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/index.css">
 <link rel="stylesheet" href="/css/loginsignup.css">
-<script type="text/javascript" src="/js/createpost.js"></script>
+<script src="/js/createpost.js"></script>
 </head>
 <body>
 	<?php
@@ -20,9 +20,9 @@
 				<legend>Create a Post</legend>
 					Title: <input type="text" name="posttitle"  required><br>
 					
-					<input type="radio" id="text" name="typeofpost" value="text">
+					<input type="radio" id="text" name="typeofpost" value="text" onclick="getInput()">
 					<label for="text">Text Post</label>
-					<input type="radio" id="image" name="typeofpost" value="image">
+					<input type="radio" id="image" name="typeofpost" value="image" onclick="getInput()">
 					<label for="image">Image Post</label><br>
 					<div id="post-input">
 
