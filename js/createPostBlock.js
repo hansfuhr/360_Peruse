@@ -1,8 +1,8 @@
-window.onload = function() {
-	$("#txt-input").click(function () {
+$(function() {
+	$("#txt-input").on("click", function () {
 		window.location.href = "/createPost.php?type=txt";
 	});
-	$("#img-icon").click(function () {
+	$("#img-icon").on("click", function () {
 		window.location.href = "/createPost.php?type=img";
 	});
-};
+});

@@ -35,7 +35,7 @@
 					echo "<input id='txt-input' type='text' placeholder='Create Post' />";
 					echo "<img id='img-icon' src='/images/logo_small.png' />";
 					echo "</div >";
-					echo "<script src='createPostBlock.js'></script>";
+					echo "<script src='/js/createPostBlock.js'></script>";
 				}
 			?>
 			<!-- feed loads here -->
