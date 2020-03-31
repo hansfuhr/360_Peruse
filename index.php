@@ -8,8 +8,8 @@
 <html lang = "en">
 <head>
 	<title>Peruse</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/index.css">
 	<!-- <link type="text/javascript" href="js/footerscroll.js"> -->
 	<script src="/js/footerscroll.js"></script>
 
