@@ -4,7 +4,6 @@
 	if (!isset($_SESSION['loggedInAs'])) {
 		$_SESSION['loggedInAs'] = null;
 	}
-	echo "<script>console.log(\"".$_SESSION['loggedInAs']."\");</script>";
 ?>
 <html lang = "en">
 <head>
@@ -15,11 +14,7 @@
 	<script src="/js/footerscroll.js"></script>
 
 	<!-- jQuery CDN -->
-	<script
-			src="https://code.jquery.com/jquery-3.4.1.js"
-			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-			crossorigin="anonymous"></script>
-<!--	<script src="~https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<!-- jQuery local fallback -->
 	<script>window.jQuery || document.write('<script src="/js/jquery-3.4.1.min.js"><\/script>')</script>
 </head>
@@ -30,7 +25,7 @@
 	<div id="row">
 		<main>
 			<?php
-				if ($_SESSION['loggedInAs'] == null) {
+				if ($_SESSION['loggedInAs'] != null) {
 					echo "<div id='create-post'>";
 					echo "<input id='txt-input' type='text' placeholder='Create Post' />";
 					echo "<img id='img-icon' src='/images/logo_small.png' />";
