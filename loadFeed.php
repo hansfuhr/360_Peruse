@@ -49,7 +49,7 @@ for ($i=0;$i<10;$i++) {
 //		echo "			<div class=\"gradient\"></div>";
 
 		echo "		</div>";
-		echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a><p>Posted by <a class='text-link' href='/a/$author'>$author</a> in <a class='text-link' href='/c/$community'>$community</a></p>";
+		echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a><p>Posted by <a class='text-link' href='/p/$author'>$author</a> in <a class='text-link' href='/c/$community'>$community</a></p>";
 		echo "	</div>";
 		echo "</a>";
 	}
