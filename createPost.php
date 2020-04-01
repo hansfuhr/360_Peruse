@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <?php
 	session_start();
+	if (!isset($_SESSION['loggedInAs']) || $_SESSION['loggedInAs'] == null) {
+		$url = isset($_SERVER['HTTP_REFERER'])? $_SERVER['HTTP_REFERER'] : "/";
+		header("location:$url");
+	}
 ?>
 <html lang = "en">
 <head>
-<title>Peruse</title>
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/index.css">
-<link rel="stylesheet" href="/css/loginsignup.css">
-<script src="/js/createpost.js"></script>
+	<title>Peruse</title>
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="/css/createPost.css">
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<!-- jQuery local fallback -->
+	<script>window.jQuery || document.write('<script src="/js/jquery-3.4.1.min.js"><\/script>')</script>
+
+	<script type="text/javascript" src="/js/createpost.js"></script>
+
+	<?php
+		if (!isset($_GET['postType'])) {
+			$_GET['postType'] = "txt";
+		}
+	?>
 </head>
 <body>
 	<?php
 		include "header.php";
 	?>
+	<div id="row">
 	<main>
 		<form action="http://www.randyconnolly.com/tests/process.php" method="post">
 			<fieldset>
 				<legend>Create a Post</legend>
-					Title: <input type="text" name="posttitle"  required><br>
+					Title: <input type="text" name="posttitle"  required><br />
 					
-					<input type="radio" id="text" name="typeofpost" value="text" onclick="getInput()">
+					<input type="radio" id="text" name="typeofpost" value="text" onclick="getInput()" <?php echo (($_GET['postType'] === "txt")? "checked='checked'" : "")?>>
 					<label for="text">Text Post</label>
-					<input type="radio" id="image" name="typeofpost" value="image" onclick="getInput()">
-					<label for="image">Image Post</label><br>
-					<div id="post-input">
-
-</div>
+					<input type="radio" id="image" name="typeofpost" value="image" onclick="getInput()" <?php echo (($_GET['postType'] === "img")? "checked='checked'" : "")?>>
+					<label for="image">Image Post</label><br />
+					<div id="post-input"></div>
 					<input type="submit" value="Submit" class="button"> <input type="reset" value="Reset" class="button">
-
 			</fieldset>
 		</form>
 	</main>
@@ -50,6 +63,7 @@
 			<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
 		</footer>
 	</section>
+	</div>
 </body>
 </html>
 
