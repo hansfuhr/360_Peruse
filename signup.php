@@ -16,16 +16,15 @@
 	?>
 	<div id="row">
 		<main>
-			<form action="http://www.randyconnolly.com/tests/process.php" method="post">
+			<form action="createAccount.php" method="post" enctype="multipart/form-data">
 				<fieldset>
 					<legend>Create a Peruse Account</legend>
-						Username: <input type="text"  required><br>
-						Password: <input type="password" id="pass" onkeyup='checkpass();' required><br>
+						Username: <input type="text" name="username"  required><br>
+						Password: <input type="password" name="password" id="pass" onkeyup='checkpass();' required><br>
 						Confirm password: <input type="password" id="confirm" onkeyup='checkpass();' required><br>
-						Choose a profile picture: <br><input type="file" id="userpic" accept="image/png, image/jpeg"><br>
-						Email: <input type="email" name="client" id="mail" required><br>
-						Email me about the cool new Peruse features <input type="checkbox" name="first"><br>
-						Birthdate: <input type="date" name="date"><br>
+						Choose a profile picture: <br><input type="file" name="profile-pic" id="userpic" accept="image/png, image/jpeg" required><br>
+						Email: <input type="email" name="email" id="mail" required><br>
+						Birthdate: <input type="date" name="birthdate" required><br>
 						<input type="submit" value="Submit" class="button"> <input type="reset" value="Reset" class="button">
 				</fieldset>
 			</form>
