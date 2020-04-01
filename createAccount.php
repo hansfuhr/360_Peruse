@@ -23,19 +23,22 @@
 //	echo "\n".$sql;
 //	echo "\n".($mysqli->error);
 
+	$url = "/";
+
 	if ($fileOk and ($result->num_rows === 0)) {
+		echo "if";
 		$insert = "INSERT INTO account (username, password, birthdate, email, dateJoined) VALUES ('$username', '$password', '$birthdate', '$email', CURDATE());";
 		$mysqli->query($insert);
 		move_uploaded_file($profilePic['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/images/profile_pics/$username.$ext");
 //		echo "<img src='/images/profile_pics/$username.$ext' />";
 		$_SESSION['loggedInAs'] = $username;
 	} else {
-		$url = isset($_SERVER['HTTP_REFERER'])? $_SERVER['HTTP_REFERER'] : "/";
-		header("location:$url");
+		if(isset($_SERVER['HTTP_REFERER']))
+			$url = $_SERVER['HTTP_REFERER'];
 		// go back to previous page saying this username is taken
 	}
 
 	echo "\n".($mysqli->error);
 	$mysqli->close();
 
-	header("location:/");
+	header("location:$url");
