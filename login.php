@@ -19,9 +19,17 @@
 			<form action="http://www.randyconnolly.com/tests/process.php" method="post">
 				<fieldset>
 					<legend>Log in to Peruse</legend>
-						Username: <input type="text" name="client" required><br>
-						Password: <input type="password" name="client" required><br>
-						<input type="submit" value="Submit" class="button"> <input type="reset" value="Reset" class="button">
+						Username: <input type="text" name="username" required><br>
+						Password: <input type="password" name="password" required><br>
+						<input type="submit" value="Log In" class="button"> 
+				</fieldset>
+			</form>
+			<form action="forgotPassword.php" method="post">
+				<fieldset>
+					<legend>Forgot your password?</legend>
+						Enter your username: <input type="text" name="username" required><br>
+						You will receive a password recovery email.<br>
+						<input type="submit" name="submit" value="Email Me" class="button">
 				</fieldset>
 			</form>
 		</main>

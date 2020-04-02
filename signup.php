@@ -22,7 +22,7 @@
 						Username: <input type="text" name="username"  required><br>
 						Password: <input type="password" name="password" id="pass" onkeyup='checkpass();' required><br>
 						Confirm password: <input type="password" id="confirm" onkeyup='checkpass();' required><br>
-						Choose a profile picture: <br><input type="file" name="profile-pic" id="userpic" accept="image/png, image/jpeg" required><br>
+						Choose a profile picture: <br><input type="file" name="profile-pic" id="userpic" accept="image/png, image/jpeg, image/gif" required><br>
 						Email: <input type="email" name="email" id="mail" required><br>
 						Birthdate: <input type="date" name="birthdate" required><br>
 						<input type="submit" value="Submit" class="button"> <input type="reset" value="Reset" class="button">
