@@ -19,7 +19,7 @@
 
 		}
 	} else {
-		$_SESSION['preLogin'] = $_SERVER['HTTP_REFERER'];
+//		$_SESSION['preLogin'] = $_SERVER['HTTP_REFERER'];
 	}
 ?>
 <html lang = "en">
