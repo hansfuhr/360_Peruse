@@ -1,7 +1,27 @@
+<!DOCTYPE html>
 <?php
 	session_start();
+	if (!isset($_SESSION['loggedInAs'])) {
+		$_SESSION['loggedInAs'] = null;
+	}
+
+	if (isset($_POST['username']) and isset($_POST['password'])) {
+		$host = "localhost";
+		$db_username = "root";
+		$db_password = "";
+		$database = "peruse_db";
+		$mysqli = new mysqli($host, $db_username, $db_password, $database);
+
+		$sql = "SELECT username FROM account WHERE username='$username' AND password='$password'";
+		$result = $mysqli->query($sql);
+		if ($result->num_rows === 1) {
+			$_SESSION['loggedInAs'] = $username;
+
+		}
+	} else {
+//		$_SESSION['preLogin'] = $_SERVER['HTTP_REFERER'];
+	}
 ?>
-<!DOCTYPE html>
 <html lang = "en">
 <head>
 <title>Peruse</title>
@@ -16,7 +36,7 @@
 	?>
 	<div id="row">
 		<main>
-			<form action="http://www.randyconnolly.com/tests/process.php" method="post">
+			<form action="/login" method="post">
 				<fieldset>
 					<legend>Log in to Peruse</legend>
 						Username: <input type="text" name="username" required><br>
