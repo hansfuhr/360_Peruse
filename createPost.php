@@ -31,14 +31,14 @@
 	?>
 	<div id="row">
 	<main>
-		<form action="http://www.randyconnolly.com/tests/process.php" method="post">
+		<form action="/submitPost.php" method="post">
 			<fieldset>
 				<legend>Create a Post</legend>
-					Title: <input type="text" name="posttitle"  required><br />
+					Title: <input type="text" name="title"  required><br />
 					
-					<input type="radio" id="text" name="typeofpost" value="text" onclick="getInput()" <?php echo (($_GET['postType'] === "txt")? "checked='checked'" : "")?>>
+					<input type="radio" id="text" name="postType" value="txt" onclick="getInput()" <?php echo (($_GET['postType'] === "txt")? "checked='checked'" : "")?>>
 					<label for="text">Text Post</label>
-					<input type="radio" id="image" name="typeofpost" value="image" onclick="getInput()" <?php echo (($_GET['postType'] === "img")? "checked='checked'" : "")?>>
+					<input type="radio" id="image" name="postType" value="img" onclick="getInput()" <?php echo (($_GET['postType'] === "img")? "checked='checked'" : "")?>>
 					<label for="image">Image Post</label><br />
 					<div id="post-input"></div>
 					<input type="submit" value="Submit" class="button"> <input type="reset" value="Reset" class="button">
