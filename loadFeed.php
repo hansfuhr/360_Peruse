@@ -22,7 +22,7 @@
 		$author = $row[0];
 		$timePosted = str_replace(["-", " ", ":"], "", $row[1]);
 		$postType = $row[2];
-		$community = $row[3];
+		$community = (strcmp($row[3], ""))? null : $row[3];
 		$title = $row[4];
 		$content = $row[5];
 		$upvotes = $row[6];
@@ -30,6 +30,7 @@
 
 
 for ($i=0;$i<10;$i++) {
+		echo "<a href='/p/$author/$timePosted'>";
 		echo "	<div id='$author-$timePosted' class='post'>";
 		echo "		<div class='post-contents'>";
 		echo "			<h3>$title</h3>";
@@ -49,7 +50,8 @@ for ($i=0;$i<10;$i++) {
 //		echo "			<div class=\"gradient\"></div>";
 
 		echo "		</div>";
-		echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a><p>Posted by <a class='text-link' href='/p/$author'>$author</a> in <a class='text-link' href='/c/$community'>$community</a></p>";
+		echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a>";
+		echo "<p>Posted by <a class='text-link' href='/p/$author'>$author</a>" . (!is_null($community)? " in <a class='text-link' href='/c/$community'>$community</a></p>" : "</p>");
 		echo "	</div>";
 		echo "</a>";
 	}

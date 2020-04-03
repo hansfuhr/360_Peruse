@@ -31,7 +31,7 @@
 	?>
 	<div id="row">
 	<main>
-		<form action="/submitPost.php" method="post">
+		<form action="/submitPost.php" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Create a Post</legend>
 					<select name="community">

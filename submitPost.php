@@ -17,7 +17,7 @@
 		$content = $_POST['content'];
 	} else if ($postType == 'img') {
 		$image = $_FILES['image'];
-		$ext = strtolower(pathinfo($_FILES['profile-pic']['name'], PATHINFO_EXTENSION));
+		$ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
 		$fileOk = ($ext === "png") || ($ext === "jpg") || ($ext === "jpeg") || ($ext === "gif") || ($ext === "bmp");
 		$location = "/images/posts/$username-$timeCode.$ext";
 		move_uploaded_file($image['tmp_name'], $_SERVER['DOCUMENT_ROOT'].$location);
@@ -30,11 +30,19 @@
 	$database = "peruse_db";
 	$mysqli = new mysqli($host, $db_username, $db_password, $database);
 
-	$sql = "INSERT INTO post (author, timePosted, postType, community, title, content) VALUES ($username, $timePosted, $postType, $community, $title, $content)";
-	echo $mysqli->query($sql);
+	if ($community != null)
+		$sql = "INSERT INTO post (author, timePosted, postType, community, title, content) VALUES ('$username', '$timePosted', '$postType', '$community', '$title', '$content')";
+	else
+		$sql = "INSERT INTO post (author, timePosted, postType, title, content) VALUES ('$username', '$timePosted', '$postType', '$title', '$content')";
+	$mysqli->query($sql);
+
+//	echo "$sql<br />";
+//	echo $mysqli->error;
 
 	$mysqli->close();
 
 	$url = "/p/$username/$timeCode";
-	echo $url;
-//	header("location:$url");
+//	echo $url;
+	header("location:$url");
+
+	//echo "test";
