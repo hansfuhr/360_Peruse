@@ -34,8 +34,31 @@
 		<form action="/submitPost.php" method="post">
 			<fieldset>
 				<legend>Create a Post</legend>
+					<select name="community">
+						<?php
+							$host = "localhost";
+							$db_username = "root";
+							$db_password = "";
+							$database = "peruse_db";
+							$mysqli = new mysqli($host, $db_username, $db_password, $database);
+
+							$sql = "SELECT following FROM follows WHERE username='".$_SESSION['loggedInAs']."' AND followType='c'";
+							$result = $mysqli->query($sql);
+
+							while ($row = $result->fetch_assoc()) {
+								$following = $row['following'];
+								if ($following === $_GET['community'])
+									echo "<option value='$following' selected>c/$following</option>";
+								else
+									echo "<option value='$following'>c/$following</option>";
+							}
+
+							$mysqli->close();
+						?>
+					</select>
+					<br />
 					Title: <input type="text" name="title"  required><br />
-					
+					<label for="title">Title: </label>
 					<input type="radio" id="text" name="postType" value="txt" onclick="getInput()" <?php echo (($_GET['postType'] === "txt")? "checked='checked'" : "")?>>
 					<label for="text">Text Post</label>
 					<input type="radio" id="image" name="postType" value="img" onclick="getInput()" <?php echo (($_GET['postType'] === "img")? "checked='checked'" : "")?>>
