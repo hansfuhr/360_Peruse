@@ -7,6 +7,13 @@
 		<option>Top Communities</option>
 	</select>
 	<input type="search" id="search-bar" placeholder="Search Peruse">
-	<a href="/signup"><input id="signup-btn" type="button" value="SIGN UP"></a>
-	<a href="/login"><input id="login-btn" type="button" value="LOG IN"></a>
+	<?php
+		if (isset($_SESSION['loggedInAs'])) {
+			echo "<a href='/logout.php?url=".$_SERVER['REQUEST_URI']."'><input class='header-btn' type='button' value='LOG OUT' /></a>";
+			echo "<a href='/p/".$_SESSION['loggedInAs']."'><input class='header-btn' type='button' value='p/".$_SESSION['loggedInAs']."' /></a>";
+		} else {
+			echo "<a href='/signup' ><input class='header-btn' type='button' value='SIGN UP' /></a>";
+			echo "<a href='/login'' ><input class='header-btn' type='button' value='LOG IN' /></a>";
+		}
+	?>
 </header>

@@ -29,7 +29,7 @@
 		$downvotes = $row[7];
 
 
-for ($i=0;$i<10;$i++) {
+//for ($i=0;$i<10;$i++) {
 		echo "<a href='/p/$author/$timePosted'>";
 		echo "	<div id='$author-$timePosted' class='post'>";
 		echo "		<div class='post-contents'>";
@@ -50,10 +50,10 @@ for ($i=0;$i<10;$i++) {
 //		echo "			<div class=\"gradient\"></div>";
 
 		echo "		</div>";
-		echo "<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a>";
-		echo "<p>Posted by <a class='text-link' href='/p/$author'>$author</a>" . (!is_null($community)? " in <a class='text-link' href='/c/$community'>$community</a></p>" : "</p>");
+		echo "		<a class='uv' href='#'>Upvote</a> / <a class='dv' href='#'>Downvote</a>";
+		echo "		<p>Posted by <a class='text-link' href='/p/$author'>$author</a>" . (!is_null($community)? " in <a class='text-link' href='/c/$community'>$community</a></p>" : "</p>");
 		echo "	</div>";
 		echo "</a>";
-	}
+//	}
 	}
 ?>

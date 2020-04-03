@@ -12,11 +12,11 @@
 		$database = "peruse_db";
 		$mysqli = new mysqli($host, $db_username, $db_password, $database);
 
-		$sql = "SELECT username FROM account WHERE username='$username' AND password='$password'";
+		$sql = "SELECT username FROM account WHERE username='".$_POST['username']."' AND password='".$_POST['password']."'";
 		$result = $mysqli->query($sql);
 		if ($result->num_rows === 1) {
-			$_SESSION['loggedInAs'] = $username;
-
+			$_SESSION['loggedInAs'] = $_POST['username'];
+			header("location:/");
 		}
 	} else {
 //		$_SESSION['preLogin'] = $_SERVER['HTTP_REFERER'];

@@ -26,6 +26,17 @@ function loadMore() {
 	$.ajax("loadFeed.php?offset=" + offset, {success: function (result) {
 		$("main").append(result);
 	}});
-
 	offset += 10;
+
+	let e;
+	for (let i = 1; i <= offset; i++) {
+		e = $("main").find("a");//.find(".post-contents").find("*");
+		// selector is incorrect
+		console.log(e.length);
+		// console.log(e[e.length-i].innerHTML);
+		// console.log(e[e.length-i].scrollHeight);
+		// console.log(e[e.length-i].clientHeight);
+		// if (e[e.length-i].scrollHeight > e[e.length-i].clientHeight)
+		// 	e[e.length-i].after("<div class='gradient'></div>");
+	}
 }
