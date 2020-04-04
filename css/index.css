@@ -155,7 +155,7 @@ main {
 .post .post-contents {
 	position: relative;
 	display: block;
-	max-height: 50vh;
+	/*max-height: 50vh;*/
 	margin-bottom: 0.5rem;
 	overflow: hidden;
 }
@@ -164,18 +164,19 @@ main {
 	margin-bottom: 0.5rem;
 }
 
-.post .post-contents img {
-	width: 100%;
+.post .post-contents *:nth-child(2) {
+	margin: 0.5rem;
+	width: calc(100% - 1rem);
 	border-radius: 0.5rem;
 }
 
-.gradient {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 5rem;
-	background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
-}
+/*.gradient {*/
+/*	position: absolute;*/
+/*	bottom: 0;*/
+/*	width: 100%;*/
+/*	height: 5rem;*/
+/*	background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))*/
+/*}*/
 
 .uv:link, .dv:link {
 	color: grey;
@@ -185,11 +186,11 @@ main {
 	color: black;
 }
 
-.uv:visited {
+.uv-visited {
 	color: #0CE262;
 }
 
-.dv:visited {
+.dv-visited {
 	color: #FFBE1D;
 }
 
