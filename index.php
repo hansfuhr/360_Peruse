@@ -34,6 +34,7 @@
 				}
 			?>
 			<!-- feed loads here -->
+			<script src="/js/vote.js"></script>
 			<script src="/js/feed.js"></script>
 		</main>
 		<section id="secondary">

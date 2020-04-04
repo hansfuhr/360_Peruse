@@ -6,6 +6,8 @@
 	$timePosted = substr_replace(substr_replace(substr_replace(substr_replace(substr_replace($timeCode, "-", 4, 0), "-", 7, 0), " ", 10, 0), ":", 13, 0), ":", 16, 0);
 	$newVote = $_GET['newVote']; //up or down
 
+//	echo "$newVote";
+
 	$host = "localhost";
 	$db_username = "root";
 	$db_password = "";
@@ -26,4 +28,4 @@
 		$mysqli->query("UPDATE voteson SET vote='$newVote' WHERE username='$username' AND author='$author' AND timePosted='$timePosted';");
 	}
 
-	echo "<script>window.close();</script>";
+//	echo "<script>history.go(-1);</script>";

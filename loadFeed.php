@@ -31,7 +31,9 @@
 		$content = $row[5];
 		$upvotes = $row[6];
 		$downvotes = $row[7];
+		$vote = $row[8];
 
+		echo "vote: ".$vote;
 
 //for ($i=0;$i<10;$i++) {
 		echo "<a href='/p/$author/$timeCode'>";
@@ -55,7 +57,7 @@
 
 		echo "		</div>";
 		if (isset($_SESSION['loggedInAs']))
-			echo "		<a class='uv' href='vote.php?author=$author&timeCode=$timeCode&newVote=true' target='_blank'>Upvote</a> / <a class='dv' href='vote.php?author=$author&timeCode=$timeCode&newVote=false' target='_blank'>Downvote</a>";
+			echo "		<a class='uv".((strcmp($vote, "true") == 0)? " visited":"")."' onclick='upvote(this, \"$author\", \"$timeCode\")'>Upvote</a> / <a class='dv ".((strcmp($vote, "false") == 0)? "visited":"")."' onclick='downvote(this, \"$author\", \"$timeCode\")'>Downvote</a>";
 
 		echo "		<p>Posted by <a class='text-link' href='/p/$author'>$author</a>" . (!is_null($community)? " in <a class='text-link' href='/c/$community'>$community</a></p>" : "</p>");
 		echo "	</div>";
