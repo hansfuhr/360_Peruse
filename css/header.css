@@ -1,0 +1,79 @@
+/* header styles */
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: space-between;
+	position: fixed;
+	width: 100%;
+	background-color: #FAFAFA;
+	top: 0;
+	border-bottom: 0.5pt solid grey;
+	height: 3rem;
+	padding: 0.25rem;
+	z-index: 1;
+}
+#header_div1 {
+	display: flex;
+	
+	
+}
+#header_div2 {
+	display: flex;
+	align-items: center;
+	margin-right: 2em;
+}
+#logo {
+
+	width: 100px;
+	
+	
+	
+}
+
+.header-btn {
+
+	text-align: center;
+	text-decoration: none;
+	padding: 0.5rem;
+	margin-right: 1em;
+	margin-left: 0.5em;
+	
+
+	font-weight: 900;
+	background-color: rgb(11, 226, 97);
+	color: black;
+	border-radius: 5px;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+
+.header-btn:hover {
+	background: #434343;
+	color: white;
+	letter-spacing: 1px;
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+
+
+
+#feed-select {
+
+	
+
+	
+	height: 75%;
+	padding: 0.5rem;
+}
+
+#search-bar {
+
+	
+
+	
+	
+	padding: 0.5rem;
+	height: 75%;
+}
+/* end of header styles */
