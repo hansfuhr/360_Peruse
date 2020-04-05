@@ -7,6 +7,7 @@
 
 	$username = $_SESSION['loggedInAs'];
 	$timePosted = date('Y-m-d H:i:s');
+	echo $timePosted;
 	$timeCode = str_replace(["-", ":", " "], "", $timePosted);
 	$postType = $_POST['postType'];
 	$community = isset($_POST['community'])? $_POST['community'] : null;

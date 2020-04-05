@@ -93,9 +93,13 @@ main {
 }
 
 .post .post-contents *:nth-child(2) {
-	margin: 0.5rem;
+	/*margin: 0.5rem;*/
 	width: calc(100% - 1rem);
 	border-radius: 0.5rem;
+}
+
+.post .post-contents p:nth-child(2) {
+	margin: 0.5rem;
 }
 
 /*.gradient {*/
@@ -106,19 +110,21 @@ main {
 /*	background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))*/
 /*}*/
 
-.uv:link, .dv:link {
+.uv, .dv {
 	color: grey;
+	user-select: none;
 }
 
 .uv:hover, .dv:hover {
 	color: black;
+	cursor: pointer;
 }
 
-.uv-visited {
+.uv.visited {
 	color: #0CE262;
 }
 
-.dv-visited {
+.dv.visited {
 	color: #FFBE1D;
 }
 

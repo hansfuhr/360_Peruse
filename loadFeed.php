@@ -16,22 +16,27 @@
 //	// WHERE clause changes depending on user / all / community etc. feed requested
 //	// $offset should be incremented by LIMIT amount so as to continuously load for data when the end of the feed is reached
 //	$sql = "SELECT *, (/*equation here*/) AS OrderCondition FROM post WHERE /*stuff here*/ ORDER BY OrderCondition DESC LIMIT 10 OFFSET $offset";
-	$sql = "SELECT * FROM post" . (isset($_SESSION['loggedInAs'])? " LEFT JOIN (SELECT * FROM voteson WHERE username='".$_SESSION['loggedInAs']."') AS voteson ON post.author=voteson.author AND post.timePosted=voteson.timePosted ":"") . " ORDER BY post.timePosted DESC";
+	$sql = "SELECT *, post.author AS author, post.timePosted AS timePosted FROM post" . (isset($_SESSION['loggedInAs'])? " LEFT JOIN (SELECT * FROM voteson WHERE username='".$_SESSION['loggedInAs']."') AS voteson ON post.author=voteson.author AND post.timePosted=voteson.timePosted ":"") . " ORDER BY post.timePosted DESC";
 	$result = $mysqli->query($sql);
 //	$result = $mysqli -> query($sql)
 
 	echo $mysqli->error;
 
-	while ($row = $result->fetch_row()) {
-		$author = $row[0];
-		$timeCode = str_replace(["-", " ", ":"], "", $row[1]);
-		$postType = $row[2];
-		$community = (strcmp($row[3], ""))? null : $row[3];
-		$title = $row[4];
-		$content = $row[5];
-		$upvotes = $row[6];
-		$downvotes = $row[7];
-
+	while ($row = $result->fetch_assoc()) {
+//		echo implode(", ", $row);
+//		echo implode(", ", array_keys($row));
+		$author = $row['author'];
+		$timeCode = str_replace(["-", " ", ":"], "", $row['timePosted']);
+		$postType = $row['postType'];
+		$community = (strcmp($row['community'], "")) ? null : $row['community'];
+		$title = $row['title'];
+		$content = $row['content'];
+		$upvotes = $row['upvotes'];
+		$downvotes = $row['downvotes'];
+		if (isset($_SESSION['loggedInAs'])) {
+			$vote = $row['vote'];
+//			echo "vote: " . $vote;
+		}
 
 //for ($i=0;$i<10;$i++) {
 		echo "<a href='/p/$author/$timeCode'>";
@@ -47,7 +52,6 @@
 				echo "			<img src='$content' alt='Sample post image'>";
 				break;
 			default:
-
 		}
 
 		//this next line should be dependant on the height of the post
@@ -55,7 +59,7 @@
 
 		echo "		</div>";
 		if (isset($_SESSION['loggedInAs']))
-			echo "		<a class='uv' href='vote.php?author=$author&timeCode=$timeCode&newVote=true' target='_blank'>Upvote</a> / <a class='dv' href='vote.php?author=$author&timeCode=$timeCode&newVote=false' target='_blank'>Downvote</a>";
+			echo "		<a class='uv".((strcmp($vote, "UP") == 0)? " visited":"")."' onclick='upvote(this, \"$author\", \"$timeCode\")'>Upvote</a> / <a class='dv ".((strcmp($vote, "DN") == 0)? "visited":"")."' onclick='downvote(this, \"$author\", \"$timeCode\")'>Downvote</a>";
 
 		echo "		<p>Posted by <a class='text-link' href='/p/$author'>$author</a>" . (!is_null($community)? " in <a class='text-link' href='/c/$community'>$community</a></p>" : "</p>");
 		echo "	</div>";
