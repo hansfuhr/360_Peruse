@@ -87,12 +87,14 @@
 //			echo "<div class=\"reply\"><p>Lorem ipsum dolor sit amet</p><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p></div></div><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p></div></div><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p></div><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p></div>";
 
 			echo "</section>";
-
+			if (isset($_SESSION['loggedInAs'])) {
 				echo "<form id='commentForm' action='/submitComment.php' method='post'>";
+				echo "<input type='hidden' name='postAuthor' value='$author' />";
+				echo "<input type='hidden' name='postTimePosted' value='$timePosted' />";
 				echo "<textarea id='commentInput' name='comment' placeholder='Leave a comment...'></textarea>";
 				echo "<input id='commentSubmit' type='submit' />";
 				echo "</form>";
-
+			}
 			echo "</div>";
 			?>
 			<script src="/js/commentForm.js"></script>
