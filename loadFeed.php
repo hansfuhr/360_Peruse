@@ -17,7 +17,7 @@
 //	// WHERE clause changes depending on user / all / community etc. feed requested
 //	// $offset should be incremented by LIMIT amount so as to continuously load for data when the end of the feed is reached
 //	$sql = "SELECT *, (/*equation here*/) AS OrderCondition FROM post WHERE /*stuff here*/ ORDER BY OrderCondition DESC LIMIT 10 OFFSET $offset";
-	$sql = "SELECT *, post.author AS author, post.timePosted AS timePosted FROM post" . (isset($_SESSION['loggedInAs'])? " LEFT JOIN (SELECT * FROM voteson WHERE username='".$_SESSION['loggedInAs']."') AS voteson ON post.author=voteson.author AND post.timePosted=voteson.timePosted ":"") . (($_GET['author'] !== "")? " WHERE post.author='".$_GET['author']."'":"") . " ORDER BY post.timePosted DESC";
+	$sql = "SELECT *, post.author AS author, post.timePosted AS timePosted FROM post" . (isset($_SESSION['loggedInAs'])? " LEFT JOIN (SELECT * FROM voteson WHERE username='".$_SESSION['loggedInAs']."') AS voteson ON post.author=voteson.author AND post.timePosted=voteson.timePosted ":"") . (($_GET['author'] !== "")? " WHERE post.author='".$_GET['author']."'":"") . " ORDER BY post.timePosted DESC;";
 //	echo $sql;
 	$result = $mysqli->query($sql);
 //	$result = $mysqli -> query($sql)
@@ -35,12 +35,7 @@
 		$content = $row['content'];
 		$upvotes = $row['upvotes'];
 		$downvotes = $row['downvotes'];
-		if (isset($_SESSION['loggedInAs'])) {
-			$vote = $row['vote'];
-//			echo "vote: " . $vote;
-		}
 
-//for ($i=0;$i<10;$i++) {
 		echo "<a href='/p/$author/$timeCode'>";
 		echo "	<div id='$author-$timeCode' class='post'>";
 		echo "		<div class='post-contents'>";
@@ -60,12 +55,13 @@
 //		echo "			<div class=\"gradient\"></div>";		// max-height removed no need for gradient
 
 		echo "		</div>";
-		if (isset($_SESSION['loggedInAs']))
+		if (isset($_SESSION['loggedInAs'])) {
+			$vote = $row['vote'];
 			echo "		<a class='uv".((strcmp($vote, "UP") == 0)? " visited":"")."' onclick='upvote(this, \"$author\", \"$timeCode\")'>Upvote</a> / <a class='dv ".((strcmp($vote, "DN") == 0)? "visited":"")."' onclick='downvote(this, \"$author\", \"$timeCode\")'>Downvote</a>";
+		}
 
 		echo "		<p>Posted by <a class='text-link' href='/p/$author'>$author</a>" . (!is_null($community)? " in <a class='text-link' href='/c/$community'>$community</a></p>" : "</p>");
 		echo "	</div>";
 		echo "</a>";
-//	}
 	}
 ?>

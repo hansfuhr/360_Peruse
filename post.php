@@ -29,7 +29,7 @@
 			$author = $_GET['author'];
 			$timeCode = $_GET['timeCode'];
 			$timePosted = substr_replace(substr_replace(substr_replace(substr_replace(substr_replace($timeCode, "-", 4, 0), "-", 7, 0), " ", 10, 0), ":", 13, 0), ":", 16, 0);
-			$username = $_SESSION['loggedInAs'];
+//			$username = $_SESSION['loggedInAs'];
 
 			$host = "localhost";
 			$db_username = "root";
@@ -37,7 +37,7 @@
 			$database = "peruse_db";
 			$mysqli = new mysqli($host, $db_username, $db_password, $database);
 
-			$postSQL = "SELECT * FROM (SELECT * FROM post WHERE author='$author' AND timePosted='$timePosted') AS P LEFT JOIN (SELECT * FROM voteson WHERE username='".$_SESSION['loggedInAs']."' AND author='$author' AND timePosted='$timePosted') AS V ON P.author=V.author AND P.timePosted=V.timePosted;";
+			$postSQL = "SELECT * FROM (SELECT * FROM post WHERE author='$author' AND timePosted='$timePosted') AS P". (isset($_SESSION['loggedInAs'])? " LEFT JOIN (SELECT * FROM voteson WHERE username='".$_SESSION['loggedInAs']."' AND author='$author' AND timePosted='$timePosted') AS V ON P.author=V.author AND P.timePosted=V.timePosted;": ";");
 			$postResult = $mysqli->query($postSQL)->fetch_assoc();
 
 			echo $mysqli->error;
@@ -46,7 +46,6 @@
 			$community = $postResult['community'];
 			$title = $postResult['title'];
 			$content = $postResult['content'];
-			$vote = $postResult['vote'];
 
 			echo "<div class='post'>";
 			echo "	<div class='post-contents'>";
@@ -63,22 +62,40 @@
 			}
 
 			echo "</div>";
-			if (isset($_SESSION['loggedInAs']))
-				echo "		<a class='uv".((strcmp($vote, "UP") == 0)? " visited":"")."' onclick='upvote(this, \"$author\", \"$timeCode\")'>Upvote</a> / <a class='dv ".((strcmp($vote, "DN") == 0)? "visited":"")."' onclick='downvote(this, \"$author\", \"$timeCode\")'>Downvote</a>";
+			if (isset($_SESSION['loggedInAs'])) {
+				$vote = $postResult['vote'];
+				echo "		<a class='uv" . ((strcmp($vote, "UP") == 0) ? " visited" : "") . "' onclick='upvote(this, \"$author\", \"$timeCode\")'>Upvote</a> / <a class='dv " . ((strcmp($vote, "DN") == 0) ? "visited" : "") . "' onclick='downvote(this, \"$author\", \"$timeCode\")'>Downvote</a>";
+			}
 
 			echo "		<p>Posted by <a class='text-link' href='/p/$author'>$author</a>" . (!is_null($community)? " in <a class='text-link' href='/c/$community'>$community</a></p>" : "</p>");
 
 			echo "<hr />";
 
 			echo "<section id='comments'>";
-			echo "<script data-author='$author' data-timeCode='$timeCode' src='/js/comments.js'></script>";
+
+			$commentSQL = "SELECT * FROM comment WHERE postAuthor='$author' AND postTimePosted='$timePosted';";
+			$commentResult = $mysqli->query($commentSQL);
+
+			while ($comment = $commentResult->fetch_assoc()) {
+				echo "<div class='reply'>";
+				echo "<p>".$comment['comment']."</p>";
+				echo "</div>";
+			}
+
+//			echo "<script data-author='$author' data-timeCode='$timeCode' src='/js/comments.js'></script>";
 
 //			echo "<div class=\"reply\"><p>Lorem ipsum dolor sit amet</p><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p></div></div><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p></div></div><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p></div><div class=\"reply\"><p>Lorem ipsum dolor sit amet</p></div>";
 
-
 			echo "</section>";
+
+				echo "<form id='commentForm' action='/submitComment.php' method='post'>";
+				echo "<textarea id='commentInput' name='comment' placeholder='Leave a comment...'></textarea>";
+				echo "<input id='commentSubmit' type='submit' />";
+				echo "</form>";
+
 			echo "</div>";
 			?>
+			<script src="/js/commentForm.js"></script>
 <!--			<section id="comments">-->
 <!--				<div class="reply">-->
 <!--					<p>Lorem ipsum dolor sit amet</p>-->
