@@ -1,18 +1,14 @@
 /* header styles */
-<<<<<<< HEAD
 body {
 	padding-top: 3rem;
 	padding-bottom: 1rem;
 }
 
 header {
-=======
-header {
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
 	justify-content: space-between;
->>>>>>> origin/master
 	position: fixed;
 	width: 100%;
 	background-color: #FAFAFA;
@@ -22,7 +18,6 @@ header {
 	padding: 0.25rem;
 	z-index: 1;
 }
-<<<<<<< HEAD
 
 #logo {
 	position: relative;
@@ -43,35 +38,28 @@ header {
 	margin-right: 2rem;
 	top: 50%;
 	transform: translate(0, -50%);
-=======
+}
+
 #header_div1 {
 	display: flex;
-	
-	
 }
+
 #header_div2 {
 	display: flex;
 	align-items: center;
 	margin-right: 2em;
 }
-#logo {
 
+#logo {
 	width: 100px;
-	
-	
-	
 }
 
 .header-btn {
-
 	text-align: center;
 	text-decoration: none;
 	padding: 0.5rem;
 	margin-right: 1em;
 	margin-left: 0.5em;
-	
-
->>>>>>> origin/master
 	font-weight: 900;
 	background-color: rgb(11, 226, 97);
 	color: black;
@@ -88,13 +76,6 @@ header {
 	transition: all 0.4s ease 0s;
 }
 
-<<<<<<< HEAD
-/*@media only screen and (max-width: 700px) {*/
-/*	#login-btn, #signup-btn {*/
-/*		display: none;*/
-/*	}*/
-/*}*/
-
 #feed-select {
 	position: relative;
 	float: left;
@@ -102,21 +83,14 @@ header {
 	top: 50%;
 	transform: translate(0, -50%);
 	width: 10vw;
-=======
-
+}
 
 #feed-select {
-
-	
-
-	
 	height: 75%;
->>>>>>> origin/master
 	padding: 0.5rem;
 }
 
 #search-bar {
-<<<<<<< HEAD
 	position: relative;
 	float: left;
 	margin-left: 2rem;
@@ -124,14 +98,6 @@ header {
 	transform: translate(0, -50%);
 	width: 30vw;
 	padding: 0.5rem;
-=======
-
-	
-
-	
-	
-	padding: 0.5rem;
 	height: 75%;
->>>>>>> origin/master
 }
 /* end of header styles */
