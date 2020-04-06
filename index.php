@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 	session_start();
-	if (!isset($_SESSION['loggedInAs'])) {
-		$_SESSION['loggedInAs'] = null;
-	}
+//	if (!isset($_SESSION['loggedInAs'])) {
+//		$_SESSION['loggedInAs'] = null;
+//	}
 ?>
 <html lang = "en">
 <head>
@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="/css/reset.css">
 	<link rel="stylesheet" href="/css/index.css">
 	<!-- <link type="text/javascript" href="js/footerscroll.js"> -->
-	<script src="/js/footerscroll.js"></script>
+	<script src="/js/footer.js"></script>
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -25,7 +25,7 @@
 	<div id="row">
 		<main>
 			<?php
-				if ($_SESSION['loggedInAs'] != null) {
+				if (isset($_SESSION['loggedInAs'])) {
 					echo "<div id='create-post'>";
 					echo "<input id='txt-input' type='text' placeholder='Create Post' />";
 					echo "<img id='img-icon' src='/images/logo_small.png' />";
@@ -74,7 +74,7 @@
 				<a href ="/">Home</a> | <a href ="#main">Back To Top</a>
 				<br />
 				<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
-				<script src="/js/footerscroll.js"></script>
+				<script src="/js/footer.js"></script>
 			</footer>
 		</section>
 	</div>

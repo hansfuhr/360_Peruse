@@ -7,7 +7,7 @@
 <title>Peruse</title>
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/community.css">
-<link type="text/javascript"   href="/js/footerscroll.js">
+<link type="text/javascript"   href="/js/footer.js">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
 			<a href ="index.html">Home</a> | <a href ="#top">Back To Top</a>
 			<br />
 			<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
-			<script src="/js/footerscroll.js"></script>
+			<script src="/js/footer.js"></script>
 		</footer>
 	</section>
 </body>

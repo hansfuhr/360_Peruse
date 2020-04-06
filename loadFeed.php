@@ -9,6 +9,7 @@
 
 	//generate feed
 	$offset = $_GET['offset'];
+	$author = $_GET['author'];
 	//$orderCondition = $_GET['order']; // hot/new/etc.
 	$feed = "new";//which posts to show based off of current community or currently logged in user
 
@@ -16,7 +17,8 @@
 //	// WHERE clause changes depending on user / all / community etc. feed requested
 //	// $offset should be incremented by LIMIT amount so as to continuously load for data when the end of the feed is reached
 //	$sql = "SELECT *, (/*equation here*/) AS OrderCondition FROM post WHERE /*stuff here*/ ORDER BY OrderCondition DESC LIMIT 10 OFFSET $offset";
-	$sql = "SELECT *, post.author AS author, post.timePosted AS timePosted FROM post" . (isset($_SESSION['loggedInAs'])? " LEFT JOIN (SELECT * FROM voteson WHERE username='".$_SESSION['loggedInAs']."') AS voteson ON post.author=voteson.author AND post.timePosted=voteson.timePosted ":"") . " ORDER BY post.timePosted DESC";
+	$sql = "SELECT *, post.author AS author, post.timePosted AS timePosted FROM post" . (isset($_SESSION['loggedInAs'])? " LEFT JOIN (SELECT * FROM voteson WHERE username='".$_SESSION['loggedInAs']."') AS voteson ON post.author=voteson.author AND post.timePosted=voteson.timePosted ":"") . (($_GET['author'] !== "")? " WHERE post.author='".$_GET['author']."'":"") . " ORDER BY post.timePosted DESC";
+//	echo $sql;
 	$result = $mysqli->query($sql);
 //	$result = $mysqli -> query($sql)
 

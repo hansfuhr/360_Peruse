@@ -1,5 +1,6 @@
 <header>
-	<script src="js/header.js"></script>
+	<link rel="stylesheet" href="/css/header.css">
+	<script src="/js/header.js"></script>
 	<a href="/"><img id="logo" src="/images/logo_trans.png" alt="Peruse logo"></a>
 	<select id="feed-select">
 		<option>All</option>

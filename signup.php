@@ -45,7 +45,7 @@
 				<a href ="index.html">Home</a> | <a href ="#main">Back To Top</a>
 				<br />
 				<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
-				<script src="/js/footerscroll.js"></script>
+				<script src="/js/footer.js"></script>
 			</footer>
 		</section>
 	</div>

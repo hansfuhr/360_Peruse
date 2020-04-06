@@ -1,5 +1,9 @@
 var offset = 0;
 
+author = $("#feed").attr("data-author");
+if (typeof author === "undefined")
+	author = "";
+
 // load some posts to start
 loadMore();
 
@@ -12,18 +16,7 @@ window.onscroll = function (event) {
 
 // function to load posts in to feed
 function loadMore() {
-	// if(window.XMLHttpRequest) {
-	// 	xmlhttp = new XMLHttpRequest();
-	// }
-	// xmlhttp.onreadystatechange = function() {
-	// 	if (this.readyState == 4 && this.status == 200) {
-	// 		$("main").append(this.responseText);
-	// 	}
-	// };
-	//
-	// xmlhttp.open("GET", "loadFeed.php?offset=" + offset, true);
-	// xmlhttp.send();
-	$.ajax("loadFeed.php?offset=" + offset, {success: function (result) {
+	$.ajax("/loadFeed.php?offset=" + offset + "&author=" + author, {success: function (result) {
 		$("main").append(result);
 	}});
 	offset += 10;

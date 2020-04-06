@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/loginsignup.css">
-<link type="text/javascript"   href="js/footerscroll.js">
+<link type="text/javascript"   href="js/footer.js">
 </head>
 <body>
 	<?php
@@ -68,7 +68,7 @@
 				<a href ="index.html">Home</a> | <a href ="#main">Back To Top</a>
 				<br />
 				<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
-				<script src="/js/footerscroll.js"></script>
+				<script src="/js/footer.js"></script>
 			</footer>
 		</section>
 	</div>
