@@ -23,7 +23,7 @@ form{
 	transform: translate(-50%, 0);
 	color: black;
 	background-color: rgb(11, 226, 97);
-	padding: 20px;
+	padding: 1em;
 	border-radius: 5px;
 	border: none;
 	transition: all 0.4s ease 0s;
@@ -34,4 +34,7 @@ form{
 	letter-spacing: 1px;
 	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
 	transition: all 0.4s ease 0s;
+	}
+	#edit_info{
+		display: none;
 	}
