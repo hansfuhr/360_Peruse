@@ -1,4 +1,10 @@
 /* header styles */
+body{
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+	background-color: #d6d8da;
+	padding-top: 3em;
+	padding-bottom: 1em;
+}
 header {
 	display: flex;
 	flex-direction: row;
