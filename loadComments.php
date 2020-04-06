@@ -13,7 +13,9 @@
 	$commentResult = $mysqli->query($commentSQL);
 	$commentsArray = $commentResult->fetch_all(MYSQLI_ASSOC);
 
+	echo count($commentsArray);
 	echo json_encode($commentsArray);
+//	echo implode(", ", $commentsArray);
 
 //	while (count($commentsArray) > 0) {
 //		foreach ($commentsArray as $row) {

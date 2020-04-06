@@ -37,7 +37,7 @@
 			<script src="/js/vote.js"></script>
 			<script src="/js/feed.js"></script>
 		</main>
-		<section id="secondary">
+	<section id="secondary">
 			<div id="recommended-block">
 				<h3 id="popular">Popular Communities</h3>
 				<hr />

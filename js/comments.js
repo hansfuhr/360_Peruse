@@ -10,4 +10,3 @@ $.ajax("/loadComments.php?postAuthor="+postAuthor+"&postTimeCode="+postTimeCode,
 	$("#comments").append(result);
 }});
 
-

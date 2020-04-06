@@ -152,6 +152,28 @@ section#comments {
 	border-left: solid;
 }
 
+#commentForm {
+	position: sticky;
+	bottom: 0;
+	border-top: solid black;
+	margin-top: 1rem;
+	width: 100%;
+	padding: 0.5rem;
+	transform: translate(-0.5rem, 0);
+}
+
+#commentInput {
+	float: left;
+	padding: 0.25rem;
+	width: 80%;
+	height: 16px;
+}
+
+#commentSubmit {
+	float: right;
+	padding: 0.25rem;
+}
+
 #secondary {
 	flex: 2;
 	flex-basis: auto; /* width */
