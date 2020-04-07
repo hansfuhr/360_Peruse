@@ -12,9 +12,10 @@
 		$database = "peruse_db";
 		$mysqli = new mysqli($host, $db_username, $db_password, $database);
 
-		$sql = "SELECT username FROM account WHERE username='".$_POST['username']."' AND password='".$_POST['password']."'";
+		$sql = "SELECT passwordHash FROM account WHERE username='".$_POST['username']."';";
 		$result = $mysqli->query($sql);
-		if ($result->num_rows === 1) {
+		if (($row = $result->fetch_assoc()) && password_verify($_POST['password'], $row['passwordHash'])) {
+//			password_verify($_POST['password'], $row['passwordHash']);
 			$_SESSION['loggedInAs'] = $_POST['username'];
 			header("location:/");
 		}

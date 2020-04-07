@@ -53,10 +53,11 @@
 
 			switch ($postType) {
 				case "txt":
-					echo "			<p>$content</p>";
+					echo "			<p id='content'>$content</p>";
 					break;
 				case "img":
-					echo "			<img src='$content' alt='Sample post image'>";
+					echo "			<img id='content' src='$content' alt='Sample post image'>";
+					echo "			<script src='/js/imageToggle.js'></script>";
 					break;
 				default:
 			}

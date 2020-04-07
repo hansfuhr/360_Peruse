@@ -9,6 +9,7 @@
 
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+	$hash = password_hash($password, PASSWORD_DEFAULT);
 	$birthdate = $_POST['birthdate'];
 	$email = $_POST['email'];
 	$profilePic = $_FILES['profile-pic'];
@@ -26,9 +27,10 @@
 	$url = "/";
 
 	if ($fileOk and ($result->num_rows === 0)) {
-		echo "if";
-		$insert = "INSERT INTO account (username, password, birthdate, email, dateJoined) VALUES ('$username', '$password', '$birthdate', '$email', CURDATE());";
-		$mysqli->query($insert);
+		$insert = $mysqli->prepare("INSERT INTO account (username, passwordHash, birthdate, email, dateJoined) VALUES (?, ?, ?, ?, ?);");
+		$insert->bind_param("sssss",$username, $passwordHash, $email, 'CURDATE()');
+		$insert->execute();
+//		$mysqli->query($insert);
 		move_uploaded_file($profilePic['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/images/profile_pics/$username.$ext");
 //		echo "<img src='/images/profile_pics/$username.$ext' />";
 		$_SESSION['loggedInAs'] = $username;
