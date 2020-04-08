@@ -1,21 +1,20 @@
-h1{
+h1 {
 	font-size: 1.5rem;
 }
 
-h2{
+h2 {
 	font-size: 0.75rem;
 }
 
-h3{
+h3 {
 	font-size: 1.125rem;
 }
 
-body{
+body {
 	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
 	background-color: #d6d8da;
-	/*padding-top: 3rem;*/
-	/*padding-bottom: 1rem;*/
 }
+
 #row {
 	display: flex;
 	flex-direction: row;
@@ -25,7 +24,7 @@ body{
 }
 
 main {
-	flex: 1;
+	order: 1;
 	flex-basis: auto; /* like width */
 	flex-grow: 2; /* proportion of container */
 	flex-shrink: 1;
@@ -127,7 +126,7 @@ main {
 }
 
 #secondary {
-	flex: 2;
+	order: 2;
 	flex-basis: auto; /* width */
 	flex-grow: 1; /* proportion of container */
 	flex-shrink: 2;
@@ -161,11 +160,11 @@ hr {
 	text-decoration: underline;
 }
 
-ul{
+ul {
 	list-style: none;
 }
 
-li{
+li {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	padding-left: 2rem;
