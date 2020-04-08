@@ -14,6 +14,7 @@
 
 		$sql = "SELECT passwordHash FROM account WHERE username='".$_POST['username']."';";
 		$result = $mysqli->query($sql);
+
 		if (($row = $result->fetch_assoc()) && password_verify($_POST['password'], $row['passwordHash'])) {
 //			password_verify($_POST['password'], $row['passwordHash']);
 			$_SESSION['loggedInAs'] = $_POST['username'];
