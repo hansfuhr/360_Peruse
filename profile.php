@@ -26,7 +26,7 @@
 	<main>
 		<!-- feed loads here -->
 		<script src="/js/vote.js"></script>
-		<script id="feed" src="/js/feed.js" data-author="<?php echo (isset($_GET['a'])? $_GET['a']:""); ?>"></script>
+		<script id="feed" src="/js/feed.js" data-author="<?php echo (isset($_GET['author'])? $_GET['author']:""); ?>"></script>
 	</main>
 	<section id="secondary">
 		<div id="recommended-block">

@@ -1,8 +1,14 @@
 var offset = 0;
 
+args = "";
+
 author = $("#feed").attr("data-author");
-if (typeof author === "undefined")
-	author = "";
+if (author !== undefined)
+	args += "&author=" + author;
+
+searchTerm = $("#feed").attr("data-searchTerm");
+if (searchTerm !== undefined)
+	args += "&searchTerm=" + searchTerm;
 
 // load some posts to start
 loadMore();
@@ -16,21 +22,17 @@ window.onscroll = function (event) {
 
 // function to load posts in to feed
 function loadMore() {
-	$.ajax("/loadFeed.php?offset=" + offset + "&author=" + author, {success: function (result) {
+	$.ajax("/loadFeed.php?offset=" + offset + args, {success: function (result) {
 		$("main").append(result);
+		if (searchTerm !== undefined) {
+			let selected = $(".post .post-contents h3, .post .post-contents p, .post p a");
+			selected.each(function (index, element) {
+				let newHtml = $(element).html().replace(new RegExp(searchTerm, "gi"), function (x) {
+					return "<span class='searchTerm'>" + x + "</span>";
+				});
+				$(element).html(newHtml);
+			});
+		}
 	}});
 	offset += 10;
-
-	// let e;
-	// for (let i = 1; i <= offset; i++) {
-	// 	// document.getElementsByClassName("post-contents").item(document.getElementsByClassName("post-contents").length-i)
-	// 	e = $(".post-contents *:first"); //second not first child
-	// 	// selector is incorrect
-	// 	console.log(e.length);
-	// 	console.log(e.innerHTML);
-	// 	console.log(e.scrollHeight);
-	// 	console.log(e.clientHeight);
-	// 	if (e.scrollHeight > e.clientHeight)
-	// 		e.parentElement.after("<div class='gradient'></div>");
-	// }
 }

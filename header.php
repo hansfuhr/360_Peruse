@@ -6,9 +6,10 @@
 		<select id="feed-select">
 			<option>All</option>
 			<option>Popular</option>
-			<option>Top Communities</option>
+			<option>Top</option>
 		</select>
 		<input type="search" id="search-bar" placeholder="Search Peruse">
+		<script src="/js/search.js"></script>
 	</div>
 	<div id="header_div2">
 	<?php

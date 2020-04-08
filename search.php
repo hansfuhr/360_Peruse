@@ -9,7 +9,7 @@
 <head>
 	<title>Peruse</title>
 	<link rel="stylesheet" href="/css/reset.css">
-	<link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="/css/search.css">
 	<!-- <link type="text/javascript" href="js/footerscroll.js"> -->
 	<script src="/js/footer.js"></script>
 
@@ -24,18 +24,9 @@
 	?>
 	<div id="row">
 		<main>
-			<?php
-				if (isset($_SESSION['loggedInAs'])) {
-					echo "<div id='create-post'>";
-					echo "<input id='txt-input' type='text' placeholder='Create Post' />";
-					echo "<img id='img-icon' src='/images/logo_small.png' />";
-					echo "</div >";
-					echo "<script src='/js/createPostBlock.js'></script>";
-				}
-			?>
 			<!-- feed loads here -->
 			<script src="/js/vote.js"></script>
-			<script id="feed" src="/js/feed.js"></script>
+			<script id="feed" src="/js/feed.js"<?php if (isset($_GET['author'])) {echo " data-author='".$_GET['author']."'";} echo " data-searchTerm='".$_GET['searchTerm']."'"; ?>></script>
 		</main>
 	<section id="secondary">
 			<div id="recommended-block">
