@@ -27,8 +27,8 @@
 	$url = "/";
 
 	if ($fileOk and ($result->num_rows === 0)) {
-		$insert = $mysqli->prepare("INSERT INTO account (username, passwordHash, birthdate, email, dateJoined) VALUES (?, ?, ?, ?, ?);");
-		$insert->bind_param("sssss",$username, $passwordHash, $email, 'CURDATE()');
+		$insert = $mysqli->prepare("INSERT INTO account (username, passwordHash, birthdate, email, dateJoined) VALUES (?, ?, ?, ?, CURDATE());");
+		$insert->bind_param("ssss",$username, $passwordHash, $email);
 		$insert->execute();
 //		$mysqli->query($insert);
 		move_uploaded_file($profilePic['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/images/profile_pics/$username.$ext");
