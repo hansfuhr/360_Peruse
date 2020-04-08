@@ -27,9 +27,10 @@
 
 	if (isset($_GET['searchTerm'])) {
 		if (strpos($sql, "WHERE") !== false)
-			$sql .= " WHERE post.title LIKE '%".$_GET['searchTerm']."%' OR (post.postType='txt' AND post.content LIKE '%".$_GET['searchTerm']."%') OR post.author LIKE '%".$_GET['searchTerm']."%' OR post.community LIKE '%".$_GET['searchTerm']."%'";
+			$sql .= " AND";
 		else
-			$sql .= " AND (post.title LIKE '%".$_GET['searchTerm']."%' OR (post.postType='txt' AND post.content LIKE '%".$_GET['searchTerm']."%') OR post.author LIKE '%".$_GET['searchTerm']."%' OR post.community LIKE '%".$_GET['searchTerm']."%')";
+			$sql .= " WHERE";
+		$sql .= " (post.title LIKE '%".$_GET['searchTerm']."%' OR (post.postType='txt' AND post.content LIKE '%".$_GET['searchTerm']."%') OR post.author LIKE '%".$_GET['searchTerm']."%' OR post.community LIKE '%".$_GET['searchTerm']."%')";
 	}
 
 	$sql .= " ORDER BY orderCondition DESC LIMIT 10 OFFSET ".$_GET['offset'].";";
