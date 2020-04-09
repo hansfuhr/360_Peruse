@@ -79,6 +79,7 @@ main {
 }
 
 .post {
+	position: relative;
 	/*border: solid 1pt #0c0c0c00;*/
 	border: solid 1pt black;
 	background-color: white;
@@ -173,7 +174,13 @@ section#comments {
 	margin-top: 1em;
 	padding-left: 1em;
 	border-left: solid;
+	/*clear: both;*/
 }
+
+/*.reply p {*/
+/*	float: left;*/
+/*	clear: left;*/
+/*}*/
 
 #commentForm {
 	position: sticky;

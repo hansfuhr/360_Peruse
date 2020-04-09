@@ -47,7 +47,7 @@
 			$title = $postResult['title'];
 			$content = $postResult['content'];
 
-			echo "<div class='post'>";
+			echo "<div id='$author-$timeCode' class='post'>";
 			echo "	<div class='post-contents'>";
 			echo "		<h3>$title</h3>";
 
@@ -78,7 +78,9 @@
 			$commentResult = $mysqli->query($commentSQL);
 
 			while ($comment = $commentResult->fetch_assoc()) {
-				echo "<div class='reply'>";
+				$commentAuthor = $comment['author'];
+				$commentTimeCode = str_replace(["-", " ", ":"], "", $comment['timePosted']);
+				echo "<div id='$commentAuthor-$commentTimeCode' class='reply'>";
 				echo "<p>".$comment['comment']."</p>";
 				echo "</div>";
 			}
@@ -99,27 +101,7 @@
 			echo "</div>";
 			?>
 			<script src="/js/commentForm.js"></script>
-<!--			<section id="comments">-->
-<!--				<div class="reply">-->
-<!--					<p>Lorem ipsum dolor sit amet</p>-->
-<!--					<div class="reply">-->
-<!--						<p>Lorem ipsum dolor sit amet</p>-->
-<!--						<div class="reply">-->
-<!--							<p>Lorem ipsum dolor sit amet</p>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--					<div class="reply">-->
-<!--						<p>Lorem ipsum dolor sit amet</p>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="reply">-->
-<!--					<p>Lorem ipsum dolor sit amet</p>-->
-<!--				</div>-->
-<!--				<div class="reply">-->
-<!--					<p>Lorem ipsum dolor sit amet</p>-->
-<!--				</div>-->
-<!--			</section>-->
-<!--		</div>-->
+			<script src="/js/admin.js"></script>
 		</main>
 		<section id="secondary">
 			<div id="recommended-block">
