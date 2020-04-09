@@ -56,7 +56,7 @@
 		$author = $row['author'];
 		$timeCode = str_replace(["-", " ", ":"], "", $row['timePosted']);
 		$postType = $row['postType'];
-		$community = (strcmp($row['community'], "")) ? null : $row['community'];
+		$community = $row['community'];
 		$title = $row['title'];
 		$content = $row['content'];
 		$upvotes = $row['upvotes'];
