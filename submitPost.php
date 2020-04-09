@@ -5,18 +5,17 @@
 //	foreach ($_POST as $arg)
 //		echo $arg."<br />";
 
-	$username = $_SESSION['loggedInAs'];
+	$author = $_SESSION['loggedInAs'];
 	$timePosted = date('Y-m-d H:i:s');
-	echo $timePosted;
 	$timeCode = str_replace(["-", ":", " "], "", $timePosted);
 	$postType = $_POST['postType'];
-	$community = isset($_POST['community'])? $_POST['community'] : null;
+	$community = isset($_POST['community'])? $_POST['community'] : "NULL";
 	$title = $_POST['title'];
 	$content = null;
 
 	if ($postType === 'txt') {
 		$content = $_POST['content'];
-	} else if ($postType == 'img') {
+	} else if ($postType === 'img') {
 		$image = $_FILES['image'];
 		$ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
 		$fileOk = ($ext === "png") || ($ext === "jpg") || ($ext === "jpeg") || ($ext === "gif") || ($ext === "bmp");
@@ -31,19 +30,14 @@
 	$database = "peruse_db";
 	$mysqli = new mysqli($host, $db_username, $db_password, $database);
 
-	if ($community != null)
-		$sql = "INSERT INTO post (author, timePosted, postType, community, title, content) VALUES ('$username', '$timePosted', '$postType', '$community', '$title', '$content')";
-	else
-		$sql = "INSERT INTO post (author, timePosted, postType, title, content) VALUES ('$username', '$timePosted', '$postType', '$title', '$content')";
-	$mysqli->query($sql);
+	$sql = "INSERT INTO post (author, timePosted, postType, community, title, content) VALUES (?, ?, ?, ?, ?, ?)";
+	$preparedStmt = $mysqli->prepare($sql);
+	$preparedStmt->bind_param("ssssss", $author, $timePosted, $postType, $community, $title, $content);
 
-//	echo "$sql<br />";
-//	echo $mysqli->error;
+	$preparedStmt->execute();
+//	echo $preparedStmt->error;
 
 	$mysqli->close();
 
-	$url = "/p/$username/$timeCode";
-//	echo $url;
+	$url = "/p/$author/$timeCode";
 	header("location:$url");
-
-	//echo "test";
