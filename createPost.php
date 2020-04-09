@@ -10,7 +10,7 @@
 <head>
 	<title>Peruse</title>
 	<link rel="stylesheet" href="/css/reset.css">
-	<link rel="stylesheet" href="/css/index.css">
+<!--	<link rel="stylesheet" href="/css/index.css">-->
 	<link rel="stylesheet" href="/css/createPost.css">
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>

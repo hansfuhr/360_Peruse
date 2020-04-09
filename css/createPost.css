@@ -1,89 +1,21 @@
-h1{
+h1 {
 	font-size: 1.5em;
 }
 
-h2{
+h2 {
 	font-size: 0.75em;
 }
 
-h3{
+h3 {
 	font-size: 1.125em;
 }
 
-body{
+body {
 	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
 	background-color: #d6d8da;
 	padding-top: 3em;
 	padding-bottom: 1em;
 }
-
-/* header styles */
-header {
-	position: fixed;
-	width: 100%;
-	background-color: #FAFAFA;
-	top: 0;
-	border-bottom: 0.5pt solid grey;
-	height: 3em;
-	padding: 0.25em;
-	z-index: 1;
-}
-
-#logo {
-	position: relative;
-	float: left;
-	width: 100px;
-	margin-left: 1em;
-	top: 50%;
-	transform: translate(0, -50%);
-}
-
-#signup-btn, #login-btn {
-	position: relative;
-	float: right;
-	display: inline-block;
-	text-align: center;
-	text-decoration: none;
-	padding: 0.5em 1em;
-	margin-right: 2em;
-	top: 50%;
-	transform: translate(0, -50%);
-	font-weight: 900;
-	background-color: rgb(11, 226, 97);
-	color: black;
-	border-radius: 5px;
-	border: none;
-	transition: all 0.4s ease 0s;
-}
-
-#feed-select {
-	position: relative;
-	float: left;
-	margin-left: 2em;
-	top: 50%;
-	transform: translate(0, -50%);
-	width: 10vw;
-	padding: 0.5em;
-}
-
-#search-bar {
-	position: relative;
-	float: left;
-	margin-left: 2em;
-	top: 50%;
-	transform: translate(0, -50%);
-	width: 30vw;
-	padding: 0.5em;
-}
-
-#signup-btn:hover, #login-btn:hover{
-	background: #434343;
-	color: white;
-	letter-spacing: 1px;
-	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-	transition: all 0.4s ease 0s;
-}
-/* end of header styles */
 
 #row {
 	display: flex;
