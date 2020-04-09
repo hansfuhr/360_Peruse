@@ -24,14 +24,13 @@
 //	echo "\n".$sql;
 //	echo "\n".($mysqli->error);
 
-	$url = "/";
-
 	if ($fileOk and ($result->num_rows === 0)) {
-		$insert = $mysqli->prepare("INSERT INTO account (username, passwordHash, birthdate, email, dateJoined) VALUES (?, ?, ?, ?, CURDATE());");
-		$insert->bind_param("ssss",$username, $passwordHash, $birthdate, $email);
+		$profilePicPath = "/images/profile_pics/$username.$ext";
+		$insert = $mysqli->prepare("INSERT INTO account (username, passwordHash, birthdate, email, dateJoined) VALUES (?, ?, ?, ?, ?, CURDATE());");
+		$insert->bind_param("sssss",$username, $passwordHash, $birthdate, $email, $profilePicPath);
 		$insert->execute();
 //		$mysqli->query($insert);
-		move_uploaded_file($profilePic['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/images/profile_pics/$username.$ext");
+		move_uploaded_file($profilePic['tmp_name'], $_SERVER['DOCUMENT_ROOT'].$profilePicPath);
 //		echo "<img src='/images/profile_pics/$username.$ext' />";
 		$_SESSION['loggedInAs'] = $username;
 	} else {
@@ -43,4 +42,4 @@
 	echo "\n".($mysqli->error);
 	$mysqli->close();
 
-	header("location:$url");
+	header("location:/");

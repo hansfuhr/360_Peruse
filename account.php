@@ -25,33 +25,43 @@
 	?>
 	<div id="row">
 	<main>
-		
 		<form>
 			<fieldset>
-				
-				<legend>My Profile</legend>
-				<img src="images/profile.jpg" alt="Profile image">
-				<p>Username: SampleProfile69</p><br>
-				<p>Password: secret</p><br>
-				<p>Email: sampleprofile@someprovider.com</p><br>
-				
+				<?php
+					$host = "localhost";
+					$db_username = "root";
+					$db_password = "";
+					$database = "peruse_db";
+					$mysqli = new mysqli($host, $db_username, $db_password, $database);
 
-				<p>Birthdate: April 11, 1989</p><br>
+					$result = $mysqli->query("SELECT * FROM account WHERE username='".$_SESSION['loggedInAs']."';");
+					$row = $result->fetch_assoc();
+
+					$profilePicPath = $row['profilePicPath'];
+					$username = $row['username'];
+					$email = $row['email'];
+					$birthdate = date("M jS, Y", $row['birthdate']);
+
+
+					echo "<legend>My Profile</legend>";
+					echo "<img src='$profilePicPath' alt='Profile image'>";
+					echo "<p>Username: $username</p><br />";
+					echo "<p>Email: $email</p><br />";
+
+					echo "<p>Birthdate: $birthdate</p><br />";
 			
-				<button type="button" id="edit">Edit Profile - Open/Close</button>
-
-
+					echo "<button type='button' id='edit'>Edit Profile - Open/Close</button>";
+				?>
 			</fieldset>
 		</form>
 
 		<form action="http://www.randyconnolly.com/tests/process.php" method="post" id="edit_info">
 			<fieldset>
 				<legend>Edit Profile</legend>
-						Change profile picture: <br><input type="file" name="profile-pic" id="userpic" accept="image/png, image/jpeg, image/gif" required><br>
-						Email: <input type="email" name="email" id="mail" required><br>
-						Birthdate: <input type="date" name="birthdate" required><br>
+						Change profile picture: <br><input type="file" name="profile-pic" id="userpic" accept="image/png, image/jpeg, image/gif" required><br />
+						Email: <input type="email" name="email" id="mail" required><br />
+						Birthdate: <input type="date" name="birthdate" required><br />
 						<input type="submit" value="Submit" class="button"> <input type="reset" value="Reset" class="button">
-
 			</fieldset>
 		</form>
 		</main>
