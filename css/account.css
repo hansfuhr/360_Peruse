@@ -1,4 +1,102 @@
-form{
+h1 {
+	font-size: 1.5rem;
+}
+
+h2 {
+	font-size: 0.75rem;
+}
+
+h3 {
+	font-size: 1.125rem;
+}
+
+body {
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+	background-color: #d6d8da;
+}
+
+#row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	margin-left: 5vw;
+}
+
+main {
+	order: 1;
+	flex-basis: auto; /* like width */
+	flex-grow: 2; /* proportion of container */
+	flex-shrink: 1;
+	width: 50vw;
+	max-width: 50vw;
+	/*margin-top: 3rem;*/
+	margin-bottom: 1rem;
+	/*margin-left: 10vw;*/
+}
+
+#secondary {
+	order: 2;
+	flex-basis: auto; /* width */
+	flex-grow: 1; /* proportion of container */
+	flex-shrink: 2;
+	position: sticky;
+	/*top: -50%; !*relative to the height of self*!*/
+	/*float: right;*/
+	width: 25vw;
+	max-width: 25vw;
+	/*margin-top: 3rem;*/
+	margin-left: 5vw;
+	/*margin-right: 10vw;*/
+	/*margin-left: 65vw;*/
+	/*overflow: hidden;*/
+}
+
+#recommended-block {
+	text-decoration: none;
+	border: solid 1pt black;
+	background-color: white;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding: 0.75rem;
+	user-select: none;
+}
+
+hr {
+	border: solid;
+}
+
+.text-link:hover{
+	text-decoration: underline;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 2rem;
+}
+
+footer {
+	border: solid 1pt #0c0c0c;
+	background-color: white;
+	padding: 0.5rem;
+}
+
+a {
+	color: black;
+}
+
+a:link {
+	text-decoration: none;
+	color: #0c0c0c;
+}
+
+form {
+	position: relative;
 	border: solid 1pt #0c0c0c00;
 	margin-top: 1em;
 	background-color: white;
@@ -7,16 +105,16 @@ form{
 	padding: 0.5em;
 	overflow: hidden;
 }
-p, form input{
+
+p, form input {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 }
-img {
+
+img:not(#logo) {
 	width: 10em;
 }
-form{
-	position: relative;
-}
+
 #edit {
 	width: 50%;
 	margin-left: 50%;
@@ -27,14 +125,16 @@ form{
 	border-radius: 5px;
 	border: none;
 	transition: all 0.4s ease 0s;
-	}
+}
+
 #edit:hover {
 	background: #434343;
 	color: white;
 	letter-spacing: 1px;
 	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
 	transition: all 0.4s ease 0s;
-	}
-	#edit_info{
-		display: none;
-	}
+}
+
+#edit_info {
+	display: none;
+}
