@@ -36,24 +36,24 @@
 						$profilePicPath = $row['profilePicPath'];
 						$username = $row['username'];
 						$email = $row['email'];
-						$birthdate = date("M jS, Y", $row['birthdate']);
+						$birthdate = date("M jS, Y", strtotime($row['birthdate']));
 
 						echo "<legend>My Profile</legend>";
 						echo "<img src='$profilePicPath' alt='Profile image'>";
 						echo "<p>Username: $username</p><br />";
 						echo "<p>Email: $email</p><br />";
+						echo "<p>Birthdate: $birthdate</p><br />";
 			
 						echo "<button type='button' id='edit'>Edit Profile - Open/Close</button>";
 					?>
 				</fieldset>
 			</form>
 
-			<form action="editAcocunt.php" method="post" id="edit_info" enctype="multipart/form-data">
+			<form action="editAccount.php" method="post" id="edit_info" enctype="multipart/form-data">
 				<fieldset>
 					<legend>Edit Profile</legend>
-					Change profile picture: <br><input type="file" name="profile-pic" id="userpic" accept="image/png, image/jpeg, image/gif" required><br />
-						Email: <input type="email" name="email" id="mail" required><br />
-						Birthdate: <input type="date" name="birthdate" required><br />
+						Change profile picture: <br><input type="file" name="profile-pic" id="userpic" accept="image/png, image/jpeg, image/gif"><br />
+						Email: <input type="email" name="email" id="mail"><br />
 					<input type="submit" value="Submit" class="button"> <input type="reset" value="Reset" class="button">
 				</fieldset>
 			</form>
