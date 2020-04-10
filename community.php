@@ -32,11 +32,11 @@
 			</ul>
 		</div>
 		<footer>
-			<a href ="index.html">Home</a> | <a href ="#top">Back To Top</a>
-			<br />
-			<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
-			<script src="/js/footer.js"></script>
-		</footer>
+				<a href ="/" class="text-link">Home</a> | <a href ="#top" class="text-link">Back To Top</a>
+				<br />
+				<i>Copyright &copy; Fuhrmann-Johnston Productions</i>
+				<script src="/js/footer.js"></script>
+			</footer>
 	</section>
 </body>
 </html>
